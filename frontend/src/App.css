@@ -239,6 +239,11 @@ ul li .global {
 
 .nbv {
   display: flex;
+  flex-direction: column;
+}
+
+.nbvchkbox {
+  display: flex;
 }
 
 .userMenu {
@@ -324,8 +329,8 @@ ul li .global {
   font-size: 14px;
 }
 
-.bnm {
-  margin-top: 13px;
+.creategigs .bnm {
+  margin-top: 10px;
 }
 
 .tworowbar {

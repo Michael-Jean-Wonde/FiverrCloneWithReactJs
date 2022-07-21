@@ -18,6 +18,7 @@ const JoinForm = () => {
         </Form.Group>
         <Form.Group className="logonformgroup" controlId="formBasicName">
           <div className="nbv">
+            <div className="nbvchkbox">
             <Form.Check
               custom
               type="checkbox"
@@ -25,10 +26,12 @@ const JoinForm = () => {
               placeholder="Choose a UserName"
             />
             <p>Join as a Buyer</p>
-          </div>
-          <Button variant="success" size="md" block type="submit">
+            </div>
+            <Button variant="success" size="md" block type="submit">
             Submit
           </Button>
+          </div>
+          
         </Form.Group>
       </Form>
     </div>

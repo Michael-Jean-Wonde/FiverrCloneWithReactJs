@@ -2,7 +2,9 @@ import React from "react";
 import UserHeader from "../components/userHeader";
 import { Button, Form, Card, Col, Container, Row } from "react-bootstrap";
 import { makeStyles } from "@material-ui/core/styles";
-
+import TextField from "@material-ui/core/TextField";
+import Autocomplete from "@material-ui/lab/Autocomplete";
+import { Chip } from "@material-ui/core";
 
 const CreateGig = () => {
   makeStyles((theme) => ({
@@ -165,17 +167,17 @@ const CreateGig = () => {
                 <Row>
                   <Col sm="3">SEARCH TAGS</Col>
                   <Col className="bnm">
-                    {/* <Autocomplete
+                    <Autocomplete
                       multiple
                       id="tags-filled"
-                      option={top10.map((option) => option.title)}
+                      options={top10.map((option) => option.title)}
                       freeSolo
                       renderTags={(value, getTagProps) =>
                         value.map((option, index) => (
                           <Chip
                             variant="outlined"
                             label={option}
-                            {...getTagProps(index)}
+                            {...getTagProps({ index })}
                           />
                         ))
                       }
@@ -186,18 +188,18 @@ const CreateGig = () => {
                           placeholder="Favorites"
                         />
                       )}
-                    /> */}
+                    />
                   </Col>
                 </Row>
               </Card.Body>
             </Card>
             <Row>
-              <Col sm="7">
+              <Col sm="1">
                 <Button variant="success" type="cancel">
                   Cancel
                 </Button>
               </Col>
-              <Col sm="4">
+              <Col sm="1">
                 <Button type="submit" variant="success">
                   Save
                 </Button>

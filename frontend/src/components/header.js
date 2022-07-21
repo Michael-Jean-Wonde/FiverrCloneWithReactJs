@@ -9,7 +9,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
-import {display} from '@mui/system';
+import display from '@mui/system';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
