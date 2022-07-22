@@ -4,12 +4,12 @@ import "bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import Slider from "./slider";
-import SigninForm from "./signin";
+import SigninForm from "./signin.js";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
-import display from '@mui/system';
+import {display} from '@mui/system';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -34,6 +34,7 @@ const Header = () => {
   const classes = useStyles();
   const [open, setopen] = React.useState();
   const handleOpen = () => {
+    console.log('opened');
     setopen(true);
   };
   const handleClose = () => {

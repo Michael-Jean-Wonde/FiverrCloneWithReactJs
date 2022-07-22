@@ -1,0 +1,42 @@
+const gigs = [
+    {
+        title: 'MERN webdeveloper',
+        categoryOne: 'webdeveloper',
+        categoryTwo: 'mern',
+        serviceType: 'fix errors',
+        metadata: 'full web creation',
+        searchtag: [{name:'mern'},{name:'web mrn'},{name:'developer'}],
+        pkgname: [{name:'basic'},{name:'advanced'},{name:'premium'}],
+        pkgdescription: [{discription:'basicdis'},{discription:'advanceddis'},{discription:'premiumdis'}],
+        deliverytime: [{days:2},{days:4},{days:5}],
+        numofpages: [{pagesnum:3},{pagesnum:8},{pagesnum:9}],
+        numofproducts: [{productsnum:3},{productsnum:8},{productsnum:9}],
+        customization: [{name:true},{name:false},{name:true}],
+        responsivedesign: [{name:true},{name:false},{name:true}],
+        contentupload: [{name:true},{name:false},{name:true}],
+        revisions: [{name:4},{name:5},{name:2}],
+        price: [{name:54},{name:5345},{name:25}],
+        image: 'images/dgu.png',
+    },
+    {
+        title: 'React webdeveloper',
+        categoryOne: 'webdeveloper',
+        categoryTwo: 'react',
+        serviceType: 'full web creation',
+        metadata: 'laravel',
+        searchtag: [{name:'react'},{name:'web react'},{name:'developer'}],
+        pkgname: [{name:'basic'},{name:'advanced'},{name:'premium'}],
+        pkgdescription: [{discription:'basicdis'},{discription:'advanceddis'},{discription:'premiumdis'}],
+        deliverytime: [{days:5},{days:1},{days:2}],
+        numofpages: [{pagesnum:3},{pagesnum:8},{pagesnum:9}],
+        numofproducts: [{productsnum:3},{productsnum:8},{productsnum:9}],
+        customization: [{name:true},{name:false},{name:true}],
+        responsivedesign: [{name:true},{name:false},{name:true}],
+        contentupload: [{name:true},{name:false},{name:true}],
+        revisions: [{name:4},{name:5},{name:2}],
+        price: [{name:54},{name:545},{name:225}],
+        image: 'images/userImage.jpg',
+    }
+]
+
+export default gigs;
