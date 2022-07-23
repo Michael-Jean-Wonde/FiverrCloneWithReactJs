@@ -3,9 +3,10 @@ import User from "../models/userModel.js";
 import generateToken from "../utils/jsonwebtokens.js";
 
 const authUser = asyncHandler(async (req, res) => {
-  const { email, password } = req.body;
-  const user = await User.findOne({ email });
+  const { email, password } = req.body
+  const user = await User.findOne({ email })
   if (user && (await user.password) === password) {
+    console.log('works');
     res.json({
       _id: user._id,
       name: user.name,

@@ -36,6 +36,7 @@ const Header = () => {
   const handleOpen = () => {
     console.log('opened');
     setopen(true);
+    console.log('opens');
   };
   const handleClose = () => {
     setopen(false);
