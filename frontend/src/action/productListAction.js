@@ -202,7 +202,7 @@ export const createGigBackend =
         type: INSERT_GIG_LIST_SUCCESS,
         payload: data,
       });
-      localStorage.setItem("insertdata", JSON.stringify(data));
+      localStorage.setItem("insertgigdata", JSON.stringify(data));
     } catch (error) {
       dispatch({
         type: INSERT_GIG_LIST_FAIL,

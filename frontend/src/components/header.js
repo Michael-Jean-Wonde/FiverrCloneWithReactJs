@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Button, Row, Col, Form, FormControl } from "react-bootstrap";
-import "bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import Slider from "./slider";
