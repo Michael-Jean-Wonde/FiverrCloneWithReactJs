@@ -15,7 +15,9 @@
   "author": "Michael Wondwosen",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.27.2",
     "browserify-zlib": "^0.2.0",
+    "chalk": "^5.0.1",
     "constants-browserify": "^1.0.0",
     "crypto-browserify": "^3.12.0",
     "dotenv": "^16.0.1",

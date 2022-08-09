@@ -17,6 +17,7 @@ import Mypost from "./components/mypost";
 import UserDetail from "./components/userDetail";
 import Dashboard from "./admin/dashboard";
 import Profile from "./pages/profile";
+import SearchJobs from "./pages/searchJob/searchJobs";
 
 
 function App() {
@@ -102,6 +103,15 @@ function App() {
             element={
               <>
                 <Profile />
+              </>
+            }
+          />
+          <Route
+            exact
+            path="/searchJobs"
+            element={
+              <>
+                <SearchJobs />
               </>
             }
           />

@@ -33,7 +33,7 @@ const UserHeader = () => {
               <a href="/profile">profile</a>
             </li>
             <li>
-              <a href="/">Search Jobs</a>
+              <a href="/searchJobs">Search Jobs</a>
             </li>
             <li>
               <a href="/gigs">Gigs</a>
