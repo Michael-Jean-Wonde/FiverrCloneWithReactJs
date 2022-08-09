@@ -69,7 +69,7 @@ export const createGig =
       dispatch({
         type: CREATE_GIG_LIST_REQUEST,
       });
-      const data = (title, category, category2, service, metadata, tag);
+      const data = {title, category, category2, service, metadata, tag}
       dispatch({
         type: CREATE_GIG_LIST_SUCCESS,
         payload: data,

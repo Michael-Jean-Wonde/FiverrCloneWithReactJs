@@ -1,0 +1,35 @@
+.home {
+    max-width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content: center;
+    display: flex;
+    background: gray;
+  }
+  
+  .item-container {
+    display: flex;
+    color: white;
+    background-color: #100458
+  }
+  
+  .item-container p {
+    margin: 10px;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .home-row {
+    display: flex;
+    z-index: 1;
+    margin-left: 5px;
+    margin-right: 5px;
+    box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
+  }
+  
+  .home-image {
+    width: 100%;
+    z-index: -1;
+    margin-bottom: -150px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+  }

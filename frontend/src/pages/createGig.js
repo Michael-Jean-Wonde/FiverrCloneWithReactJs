@@ -1,12 +1,48 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import UserHeader from "../components/userHeader";
 import { Button, Form, Card, Col, Container, Row } from "react-bootstrap";
 import { makeStyles } from "@material-ui/core/styles";
 import TextField from "@material-ui/core/TextField";
 import Autocomplete from "@material-ui/lab/Autocomplete";
 import { Chip } from "@material-ui/core";
+import { useNavigate } from "react-router-dom";
+import { createGig } from "../action/productListAction";
+import { useDispatch, useSelector } from "react-redux";
 
 const CreateGig = () => {
+  const [maintitle, setMaintitle] = useState("");
+  const [category, setCategory] = useState("");
+  const [category2, setCategory2] = useState("");
+  const [services, setServices] = useState("");
+  const [metadata, setMetadata] = useState(false);
+  const [tag, setTag] = useState([]);
+
+  const dispatch = useDispatch();
+  const userLogin = useSelector((state) => state.userLogin);
+  const creategigdata = useSelector((state) => state.creategigdata);
+  const { gig } = creategigdata;
+  const { userinfo } = userLogin;
+
+  let navigate = useNavigate();
+  useEffect(() => {
+    if (userinfo) {
+      if (userinfo.isBuyer === true) {
+        navigate("/");
+      }
+    } else {
+      navigate("/");
+    }
+    if (gig) {
+      navigate("/create-gig2");
+    }
+  }, [navigate, gig, userinfo]);
+  console.log(gig);
+
+  const submitHandler = (e) => {
+    e.preventDefault();
+    dispatch(createGig(maintitle,category,category2,services,metadata,tag));
+  };
+
   makeStyles((theme) => ({
     root: {
       "& > * + *": {
@@ -18,21 +54,29 @@ const CreateGig = () => {
     <div className="mainnnn">
       <UserHeader />
       <div className="creategigs">
-        <Form>
+        <Form onSubmit={submitHandler}>
           <Container>
             <Card style={{ width: "45rem" }}>
               <Card.Body>
                 <Row className="bnm">
                   <Col sm="3">GIG TITLE</Col>
                   <Col className="bnm" sm="9">
-                    <Form.Control placeholder="I WILL"></Form.Control>
+                    <Form.Control
+                      placeholder="I WILL"
+                      value={maintitle}
+                      onChange={(e) => setMaintitle(e.target.value)}
+                    ></Form.Control>
                   </Col>
                 </Row>
                 <Row>
                   <Col sm="3">CATEGORY</Col>
                   <Col className="bnm">
                     <Form.Group as={Col}>
-                      <Form.Control as="select">
+                      <Form.Control
+                        as="select"
+                        value={category}
+                        onChange={(e) => setCategory(e.target.value)}
+                      >
                         <option>Choose</option>
                         <option>Programming</option>
                       </Form.Control>
@@ -40,7 +84,11 @@ const CreateGig = () => {
                   </Col>
                   <Col className="bnm">
                     <Form.Group as={Col}>
-                      <Form.Control as="select">
+                      <Form.Control
+                        as="select"
+                        value={category2}
+                        onChange={(e) => setCategory2(e.target.value)}
+                      >
                         <option>Advanced</option>
                         <option>Moderate</option>
                       </Form.Control>
@@ -51,7 +99,11 @@ const CreateGig = () => {
                   <Col sm="3">SERVICE TYPE</Col>
                   <Col className="bnm">
                     <Form.Group as={Col}>
-                      <Form.Control as="select">
+                      <Form.Control
+                        as="select"
+                        value={services}
+                        onChange={(e) => setServices(e.target.value)}
+                      >
                         <option>Full Website Creation</option>
                         <option>Customization</option>
                         <option>Bug Fix</option>
@@ -82,6 +134,7 @@ const CreateGig = () => {
                                 id="other"
                                 name="radio"
                                 value="JavaScript"
+                                onChange={(e) => setMetadata(e.target.value)}
                               />
                               <label htmlFor="radio1">JavaScript</label>
                             </Col>
@@ -91,6 +144,7 @@ const CreateGig = () => {
                                 id="other"
                                 name="radio"
                                 value="React"
+                                onChange={(e) => setMetadata(e.target.value)}
                               />
                               <label htmlFor="radio1">React</label>
                             </Col>
@@ -103,6 +157,7 @@ const CreateGig = () => {
                                 id="other"
                                 name="radio"
                                 value="NodeJs"
+                                onChange={(e) => setMetadata(e.target.value)}
                               />
                               <label htmlFor="radio1">NodeJs</label>
                             </Col>
@@ -112,6 +167,7 @@ const CreateGig = () => {
                                 id="other"
                                 name="radio"
                                 value="Flutter"
+                                onChange={(e) => setMetadata(e.target.value)}
                               />
                               <label htmlFor="radio1">Flutter</label>
                             </Col>
@@ -124,6 +180,7 @@ const CreateGig = () => {
                                 id="other"
                                 name="radio"
                                 value="Python"
+                                onChange={(e) => setMetadata(e.target.value)}
                               />
                               <label htmlFor="radio1">Python</label>
                             </Col>
@@ -133,6 +190,7 @@ const CreateGig = () => {
                                 id="other"
                                 name="radio"
                                 value="Java"
+                                onChange={(e) => setMetadata(e.target.value)}
                               />
                               <label htmlFor="radio1">Java</label>
                             </Col>
@@ -145,6 +203,7 @@ const CreateGig = () => {
                                 id="other"
                                 name="radio"
                                 value="ASP.NET"
+                                onChange={(e) => setMetadata(e.target.value)}
                               />
                               <label htmlFor="radio1">ASP.NET</label>
                             </Col>
@@ -154,6 +213,7 @@ const CreateGig = () => {
                                 id="other"
                                 name="radio"
                                 value="HTML"
+                                onChange={(e) => setMetadata(e.target.value)}
                               />
                               <label htmlFor="radio1">HTML</label>
                             </Col>
@@ -168,6 +228,7 @@ const CreateGig = () => {
                   <Col sm="3">SEARCH TAGS</Col>
                   <Col className="bnm">
                     <Autocomplete
+                      onChange={(event, value) => setTag(value)}
                       multiple
                       id="tags-filled"
                       options={top10.map((option) => option.title)}

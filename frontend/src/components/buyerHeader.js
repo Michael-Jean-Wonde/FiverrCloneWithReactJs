@@ -1,34 +1,39 @@
 import React from "react";
 import { Row, Col, NavDropdown } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
+import { logout } from "../action/userAction.js";
+import { useDispatch } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 
 const BuyerHeader = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const logoutHandler = (e)=>{
+    e.preventDefault();
+    dispatch(logout());
+  }
   return (
     <div className="userMenu">
       <Row>
         <Col sm="10">
           <ul>
             <li>
-              <a href="/">
-                <img
-                  width="90px"
-                  height="40px"
-                  src="images/ReactJS.png"
-                  alt="logo"
-                />
-              </a>
+            <Link to="/">
+                    <img
+                        className="header__logo"
+                        src="https://s3.amazonaws.com/fjds/gig_company/original/20/freelancer-logo.png?1587072521"
+                        alt="logo"
+                    />
+              </Link>
             </li>
             <li>
-              <a href="/">Dashboard</a>
+              <a href="/dashboard">Dashboard</a>
+            </li>
+            <li>
+              <a href="/profile">profile</a>
             </li>
             <li>
               <a href="/">Messages</a>
-            </li>
-            <li>
-              <a href="/">Orders</a>
-            </li>
-            <li>
-              <a href="/">Analytics</a>
             </li>
             <li>
               <a href="/">community</a>
@@ -59,7 +64,7 @@ const BuyerHeader = () => {
                     </NavDropdown.Item>
                 </LinkContainer>
                 <LinkContainer to='/'>
-                        <NavDropdown.Item>
+                        <NavDropdown.Item onClick={logoutHandler}>
                             Logout
                         </NavDropdown.Item>
                     </LinkContainer>

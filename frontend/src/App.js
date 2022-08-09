@@ -14,7 +14,9 @@ import {
 import Buyer from "./pages/buyer";
 import Postjob from "./components/postjob";
 import Mypost from "./components/mypost";
-
+import UserDetail from "./components/userDetail";
+import Dashboard from "./admin/dashboard";
+import Profile from "./pages/profile";
 
 
 function App() {
@@ -82,6 +84,24 @@ function App() {
             element={
               <>
                 <Buyer />
+              </>
+            }
+          />
+          <Route
+            exact
+            path="/dashboard"
+            element={
+              <>
+                <Dashboard />
+              </>
+            }
+          />
+          <Route
+            exact
+            path="/profile"
+            element={
+              <>
+                <Profile />
               </>
             }
           />

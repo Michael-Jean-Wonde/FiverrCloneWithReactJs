@@ -18,6 +18,7 @@ const Home = () => {
   return (
     <div className="bgcolor">
       <Header />
+      {/* <br></br>
       <div className="showAllGig">
         {loading ? (
           <h1>loading........</h1>
@@ -32,7 +33,7 @@ const Home = () => {
             ))}
           </Row>
         )}
-      </div>
+      </div> */}
     </div>
   );
 };

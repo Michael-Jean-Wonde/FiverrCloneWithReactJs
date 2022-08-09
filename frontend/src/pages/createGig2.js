@@ -133,37 +133,37 @@ const CreateGig2 = () => {
                 <tr className="hk1">
                   <td>Design Customization</td>
                   <td>
-                    <Form.Check custom type="checkbox" id="checkbox1" />
+                    <Form.Check custom="true" type="checkbox" id="checkbox1" />
                   </td>
                   <td>
-                    <Form.Check custom type="checkbox" id="checkbox2" />
+                    <Form.Check custom="true" type="checkbox" id="checkbox2" />
                   </td>
                   <td>
-                    <Form.Check custom type="checkbox" id="checkbox3" />
+                    <Form.Check custom="true" type="checkbox" id="checkbox3" />
                   </td>
                 </tr>
                 <tr className="hk1">
                   <td>Responsive Design</td>
                   <td>
-                    <Form.Check custom type="checkbox" id="checkbox4" />
+                    <Form.Check custom="true" type="checkbox" id="checkbox4" />
                   </td>
                   <td>
-                    <Form.Check custom type="checkbox" id="checkbox5" />
+                    <Form.Check custom="true" type="checkbox" id="checkbox5" />
                   </td>
                   <td>
-                    <Form.Check custom type="checkbox" id="checkbox6" />
+                    <Form.Check custom="true" type="checkbox" id="checkbox6" />
                   </td>
                 </tr>
                 <tr className="hk1">
                   <td>Content Upload</td>
                   <td>
-                    <Form.Check custom type="checkbox" id="checkbox7" />
+                    <Form.Check custom="true" type="checkbox" id="checkbox7" />
                   </td>
                   <td>
-                    <Form.Check custom type="checkbox" id="checkbox8" />
+                    <Form.Check custom="true" type="checkbox" id="checkbox8" />
                   </td>
                   <td>
-                    <Form.Check custom type="checkbox" id="checkbox9" />
+                    <Form.Check custom="true" type="checkbox" id="checkbox9" />
                   </td>
                 </tr>
                 <tr>

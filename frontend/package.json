@@ -14,6 +14,7 @@
     "@material-ui/core": "^4.12.4",
     "@material-ui/icons": "^4.11.3",
     "@material-ui/lab": "^4.0.0-alpha.61",
+    "@mui/icons-material": "^5.8.4",
     "@mui/material": "^5.9.1",
     "@mui/system": "^5.9.1",
     "@reduxjs/toolkit": "^1.8.3",
@@ -57,6 +58,4 @@
       "last 1 safari version"
     ]
   }
-
-  
 }

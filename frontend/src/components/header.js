@@ -3,12 +3,17 @@ import { Button, Row, Col, Form, FormControl } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import Slider from "./slider";
+import Brands from "./intro/brands";
+import Features from "./intro/features";
+import Content from "./intro/content";
+import Projects from "./intro/projects";
+import Portfolio from "./intro/portfolio";
+import Footer from "./intro/footer";
 import SigninForm from "./signin.js";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
-import {display} from '@mui/system';
 
 const useStyles = makeStyles((theme) => ({
   modal: {
@@ -33,9 +38,9 @@ const Header = () => {
   const classes = useStyles();
   const [open, setopen] = React.useState();
   const handleOpen = () => {
-    console.log('opened');
+    console.log("opened");
     setopen(true);
-    console.log('opens');
+    console.log("opens");
   };
   const handleClose = () => {
     setopen(false);
@@ -143,6 +148,13 @@ const Header = () => {
       </div>
       <div>
         <Slider />
+        <br/>
+        <Brands />
+        <Features />
+        <Content />
+        <Projects />
+        <Portfolio />
+        <Footer />
       </div>
       <Modal
         aria-labelledby="transition-modal-title"
