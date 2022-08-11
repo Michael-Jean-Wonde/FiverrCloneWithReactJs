@@ -8,7 +8,8 @@
     "start": "node backend/index",
     "index": "nodemon backend/index",
     "client": "npm start --prefix frontend",
-    "dual": "concurrently \"npm run index\" \"npm run client\"",
+    "jobServer": "nodemon backend/jobServer",
+    "dual": "concurrently \"npm run index\" \"npm run client\" \"npm run jobServer\"",
     "data:import": "node backend/seeder",
     "data:destroy": "node backend/seeder -d"
   },

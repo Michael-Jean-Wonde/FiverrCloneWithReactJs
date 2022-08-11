@@ -1,0 +1,58 @@
+input {
+    border: none;
+    /* background-color: whitesmoke; */
+    padding: 16px;
+    box-shadow: 0px 2px skyblue;
+    flex: 2;
+    border: .5px solid whitesmoke;
+    margin-left: 250px;
+    margin-right: 250px;
+}
+
+input:focus {
+    border: none;
+}
+
+form {
+    margin-top: 20px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.form_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.jobSearchBtn {
+    flex: 1;
+    border: none;
+    background-color: rgb(93, 131, 131);
+    color: black;
+    padding: 10px 30px;
+    margin-left: 250px;
+    margin-right: 250px;
+    margin-top: 10px;
+}
+
+.container {
+    align-items: center;
+    width: 100%;
+}
+.container img {
+    width: 40px;
+    height: 20px;
+}
+
+/* .container .loading-element {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    display: none;
+    &.loading {
+        display: block;
+    }
+} */

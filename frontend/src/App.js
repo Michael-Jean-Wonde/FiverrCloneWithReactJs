@@ -17,7 +17,7 @@ import Mypost from "./components/mypost";
 import UserDetail from "./components/userDetail";
 import Dashboard from "./admin/dashboard";
 import Profile from "./pages/profile";
-import SearchJobs from "./pages/searchJob/searchJobs";
+import SearchJobs from "./pages/searchJob/search/searchJob";
 
 
 function App() {
