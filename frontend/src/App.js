@@ -18,6 +18,7 @@ import UserDetail from "./components/userDetail";
 import Dashboard from "./admin/dashboard";
 import Profile from "./pages/profile";
 import SearchJobs from "./pages/searchJob/search/searchJob";
+import Room from "./pages/chat/room";
 
 
 function App() {
@@ -112,6 +113,15 @@ function App() {
             element={
               <>
                 <SearchJobs />
+              </>
+            }
+          />
+          <Route
+            exact
+            path="/room"
+            element={
+              <>
+                <Room />
               </>
             }
           />

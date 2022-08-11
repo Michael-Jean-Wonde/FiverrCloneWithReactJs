@@ -9,6 +9,7 @@
     "index": "nodemon backend/index",
     "client": "npm start --prefix frontend",
     "jobServer": "nodemon backend/jobServer",
+    "chatServer": "nodemon backend/chatServer.js",
     "dual": "concurrently \"npm run index\" \"npm run client\" \"npm run jobServer\"",
     "data:import": "node backend/seeder",
     "data:destroy": "node backend/seeder -d"
@@ -20,6 +21,7 @@
     "browserify-zlib": "^0.2.0",
     "chalk": "^5.0.1",
     "constants-browserify": "^1.0.0",
+    "cors": "^2.8.5",
     "crypto-browserify": "^3.12.0",
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
@@ -30,6 +32,7 @@
     "mongoose": "^6.4.5",
     "os-browserify": "^0.3.0",
     "path-browserify": "^1.0.1",
+    "socket.io": "^4.5.1",
     "stream-browserify": "^3.0.0",
     "stream-http": "^3.2.0",
     "vm-browserify": "^1.1.2"

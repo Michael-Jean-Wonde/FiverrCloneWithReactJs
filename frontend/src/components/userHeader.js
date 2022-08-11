@@ -42,7 +42,7 @@ const UserHeader = () => {
               <a href="/">Analytics</a>
             </li>
             <li>
-              <a href="/">Earnings</a>
+              <a href="/room">Messages</a>
             </li>
             <li>
               <a href="/buyer-requests">Buyer Requests</a>
