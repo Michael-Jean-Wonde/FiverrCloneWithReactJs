@@ -1,6 +1,6 @@
 import React from "react";
+import './slider.css';
 import Carousel from "react-bootstrap/Carousel";
-import { Form, FormControl } from "react-bootstrap";
 import Chip from "@material-ui/core/Chip";
 import SigninForm from "./signin.js";
 import { makeStyles } from "@material-ui/core/styles";
@@ -44,7 +44,7 @@ const Slider = () => {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="images/BannerImages/greenBanner.jpg"
+            src="images/prosCol.jpg"
             alt="first slide"
           />
         </Carousel.Item>
@@ -73,15 +73,6 @@ const Slider = () => {
         <button className="videoBanner__info--second" onClick={handleOpen}>
           Earn Money Freelancing
         </button>
-        {/* <Form inline>
-          <img className="searchlogo" src="images/search-icon.png" alt="logo" />
-          <FormControl
-            type="text"
-            placeholder="try 'building mobile app'"
-            className="mr-lg-0"
-          />
-          <button className="btnn">Search</button>
-        </Form> */}
         <div className="popular">
           Popular:
           <Chip

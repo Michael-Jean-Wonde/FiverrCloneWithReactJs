@@ -1,4 +1,5 @@
 import React from "react";
+import './giglist.css';
 import { Row, Col, Card } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

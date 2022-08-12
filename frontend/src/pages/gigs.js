@@ -1,4 +1,5 @@
 import React from "react";
+import './gigs.css';
 import UserHeader from "../components/userHeader";
 import { Button, Card, ListGroup, Row, Col, Container, ListGroupItem } from "react-bootstrap";
 

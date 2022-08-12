@@ -1,0 +1,26 @@
+.signindiv {
+  justify-content: left;
+  padding: 5px;
+  margin: 5px;
+  width: 100%;
+}
+
+.signindiv Button {
+  width: 97%;
+  margin-top: 5px;
+  margin-left: 5px;
+  display: block;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.signindiv h4 {
+  margin-bottom: 25px;
+}
+
+.signindiv .sinfg {
+  padding: 5px;
+  display: block;
+  font-size: 16px;
+  line-height: 24px;
+}

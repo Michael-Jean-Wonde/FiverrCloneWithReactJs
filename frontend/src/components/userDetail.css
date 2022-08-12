@@ -1,0 +1,22 @@
+.userdetail {
+    font-weight: 600;
+    background-color: #f7f7f7;
+    padding: 20px;
+  }
+  
+  .userdetail img {
+    border-radius: 50%;
+  }
+  
+  .userdetail .userinfo {
+    background-color: white;
+    width: 27%;
+    padding: 10px;
+    line-height: 40px;
+  }
+  
+  .userdetail .userinfo .line {
+    width: 100%;
+    height: 1px;
+    background-color: #e7e8e9;
+  }

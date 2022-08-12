@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import './join.css';
 import { useDispatch, useSelector } from "react-redux";
 import { Form, Button } from "react-bootstrap";
 import { register } from "../action/userAction.js";

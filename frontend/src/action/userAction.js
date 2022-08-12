@@ -37,11 +37,12 @@ export const login = (email, password) => async (dispatch) => {
   }
 };
 
-export const logout = () => (dispatch) => {
-  localStorage.removeItem("userinfo");
+export const logout = () => async (dispatch) => {
   dispatch({
     type: USER_LOGOUT,
+    payload: null,
   });
+  localStorage.removeItem("userinfo");
 };
 
 export const register = (name, email, password, buyer) => async (dispatch) => {

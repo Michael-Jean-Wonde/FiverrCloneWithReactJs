@@ -1,4 +1,5 @@
 import React from "react";
+import './createGig2.css';
 import UserHeader from "../components/userHeader";
 import { Row, Col, Button, Form, Table, Container } from "react-bootstrap";
 

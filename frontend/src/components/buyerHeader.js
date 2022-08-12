@@ -1,4 +1,5 @@
 import React from "react";
+import './userHeader.css';
 import { Row, Col, NavDropdown } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { logout } from "../action/userAction.js";
@@ -7,11 +8,6 @@ import { Link, useNavigate } from "react-router-dom";
 
 const BuyerHeader = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
-  const logoutHandler = (e)=>{
-    e.preventDefault();
-    dispatch(logout());
-  }
   return (
     <div className="userMenu">
       <Row>
@@ -52,7 +48,7 @@ const BuyerHeader = () => {
               <img
                 width="35px"
                 height="35px"
-                className="userImg"
+                className="userimg"
                 src="images/company-logo.jpg"
                 alt="userImages"
               />
@@ -64,7 +60,7 @@ const BuyerHeader = () => {
                     </NavDropdown.Item>
                 </LinkContainer>
                 <LinkContainer to='/'>
-                        <NavDropdown.Item onClick={logoutHandler}>
+                        <NavDropdown.Item onClick={()=> dispatch(logout())}>
                             Logout
                         </NavDropdown.Item>
                     </LinkContainer>

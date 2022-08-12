@@ -6,14 +6,14 @@ import { gigList } from "../action/productListAction.js";
 import Gigslist from "../components/giglist";
 
 const Home = () => {
-  const giglist = useSelector((state) => state.gigList);
-  const { error, loading, gig } = giglist;
-  const dispatch = useDispatch();
+  // const giglist = useSelector((state) => state.gigList);
+  // const { error, loading, gig } = giglist;
+  // const dispatch = useDispatch();
 
-  useEffect(() => {
-    dispatch(gigList());
-  }, [dispatch]);
-  console.log(giglist);
+  // useEffect(() => {
+  //   dispatch(gigList());
+  // }, [dispatch]);
+  // console.log(giglist);
 
   return (
     <div className="bgcolor">

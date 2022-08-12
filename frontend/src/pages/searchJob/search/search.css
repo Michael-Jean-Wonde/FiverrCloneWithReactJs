@@ -1,4 +1,4 @@
-input {
+.form_container input {
     border: none;
     /* background-color: whitesmoke; */
     padding: 16px;
@@ -9,11 +9,11 @@ input {
     margin-right: 250px;
 }
 
-input:focus {
+.form_container input:focus {
     border: none;
 }
 
-form {
+.form_container form {
     margin-top: 20px;
     width: 100%;
     display: flex;

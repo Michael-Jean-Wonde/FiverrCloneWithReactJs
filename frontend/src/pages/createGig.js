@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import './createGig.css';
 import UserHeader from "../components/userHeader";
 import { Button, Form, Card, Col, Container, Row } from "react-bootstrap";
 import { makeStyles } from "@material-ui/core/styles";

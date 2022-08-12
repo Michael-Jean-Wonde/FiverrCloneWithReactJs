@@ -1,0 +1,33 @@
+.mainnnn {
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  .creategigs {
+    margin-top: 50px;
+    line-height: 70px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  
+  .creategigs .bnm {
+    margin-top: 10px;
+  }
+  
+  .tworowbar {
+    border-style: groove;
+    border-color: darkgray;
+    border-width: 1px;
+  }
+  
+  .borderonerow {
+    border-right: groove;
+    border-color: darkgray;
+    border-width: 1px;
+    left: 10px;
+  }
+  
+  .radiobtn {
+    line-height: 30px;
+  }

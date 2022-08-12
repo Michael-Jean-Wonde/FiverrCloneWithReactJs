@@ -1,29 +1,26 @@
 import React from "react";
+import './userHeader.css';
 import { Row, Col, NavDropdown } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { logout } from "../action/userAction.js";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 
-
 const UserHeader = () => {
   const dispatch = useDispatch();
-  const logoutHandler = (e)=>{
-    e.preventDefault();
-    dispatch(logout);
-  }
+
   return (
     <div className="userMenu">
       <Row>
         <Col sm="9">
           <ul>
             <li>
-            <Link to="/">
-                    <img
-                        className="header__logo"
-                        src="https://s3.amazonaws.com/fjds/gig_company/original/20/freelancer-logo.png?1587072521"
-                        alt="logo"
-                    />
+              <Link to="/">
+                <img
+                  className="header__logo"
+                  src="https://s3.amazonaws.com/fjds/gig_company/original/20/freelancer-logo.png?1587072521"
+                  alt="logo"
+                />
               </Link>
             </li>
             <li>
@@ -68,7 +65,9 @@ const UserHeader = () => {
                 <NavDropdown.Item>Profile</NavDropdown.Item>
               </LinkContainer>
               <LinkContainer to="/">
-                <NavDropdown.Item onClick={logoutHandler}>Logout</NavDropdown.Item>
+                <NavDropdown.Item onClick={()=> dispatch(logout())}>
+                  Logout
+                </NavDropdown.Item>
               </LinkContainer>
             </NavDropdown>
             <li>
