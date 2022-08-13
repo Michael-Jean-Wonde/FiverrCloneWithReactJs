@@ -1,5 +1,5 @@
 .home {
-    max-width: 1500px;
+  max-width: 1500px;
     margin-left: auto;
     margin-right: auto;
     justify-content: center;
@@ -7,23 +7,26 @@
     background: gray;
   }
   
-  .item-container {
+  .home-container {
+    max-width: 1600px;
     display: flex;
+    flex-direction: column;
     color: white;
-    background-color: #100458
+    background-color: gray;
   }
   
-  .item-container p {
+  .home-container p {
     margin: 10px;
     font-size: 14px;
     font-family: Arial, sans-serif;
   }
   
   .home-row {
+    width: 1200px;
+    justify-content: space-between;
     display: flex;
     z-index: 1;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin: 10px;
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08), 0 2px 4px 0 rgba(0, 0, 0, 0.12);
   }
   

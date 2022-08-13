@@ -17,7 +17,7 @@ app.get('/', (req,res)=>{
     res.send('Api is running....')
 });
 
-app.use('/gigs', gigRoutes);
+app.use('/gig', gigRoutes);
 app.use('/postjob',jobRoute);
 app.use('/getjob',getjobRoutes);
 app.use('/user', userRoutes);

@@ -1,9 +1,51 @@
-import React from "react";
-import './createGig2.css';
+import React, { useState, useEffect } from "react";
+import "./createGig2.css";
+import axios from "axios";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 import UserHeader from "../components/userHeader";
+import { createGigBackend } from "../action/productListAction";
 import { Row, Col, Button, Form, Table, Container } from "react-bootstrap";
 
 const CreateGig2 = () => {
+  const [title1, setTitle1] = useState(" ");
+  const [title2, setTitle2] = useState(" ");
+  const [title3, setTitle3] = useState(" ");
+  const [description1, setDescription1] = useState(" ");
+  const [description2, setDescription2] = useState(" ");
+  const [description3, setDescription3] = useState(" ");
+  const [deliverytime1, setDeliverytime1] = useState(0);
+  const [deliverytime2, setDeliverytime2] = useState(0);
+  const [deliverytime3, setDeliverytime3] = useState(0);
+  const [pages1, setPages1] = useState(0);
+  const [pages2, setPages2] = useState(0);
+  const [pages3, setPages3] = useState(0);
+  const [products1, setProducts1] = useState(0);
+  const [products2, setProducts2] = useState(0);
+  const [products3, setProducts3] = useState(0);
+  const [customization1, setCustomization1] = useState(false);
+  const [customization2, setCustomization2] = useState(false);
+  const [customization3, setCustomization3] = useState(false);
+  const [responsive1, setResponsive1] = useState(false);
+  const [responsive2, setResponsive2] = useState(false);
+  const [responsive3, setResponsive3] = useState(false);
+  const [contentupload1, setContentupload1] = useState(false);
+  const [contentupload2, setContentupload2] = useState(false);
+  const [contentupload3, setContentupload3] = useState(false);
+  const [revision1, setRevision1] = useState(0);
+  const [revision2, setRevision2] = useState(0);
+  const [revision3, setRevision3] = useState(0);
+  const [price1, setPrice1] = useState(0);
+  const [price2, setPrice2] = useState(0);
+  const [price3, setPrice3] = useState(0);
+  const [image, setImage] = useState("");
+  const [uploading, setUploading] = useState(false);
+
+  const dispatch = useDispatch();
+  const creategigdata = useSelector((state) => state.creategigdata);
+  const { gig } = creategigdata;
+  const { title, category, category2, service, metadata, tag } = gig;
+
   return (
     <div>
       <UserHeader />
@@ -28,25 +70,24 @@ const CreateGig2 = () => {
                   <td>
                     <Form.Control as="textarea" rows={3} />
                   </td>
-                  
+
                   <td>
                     <Form.Control as="textarea" rows={3} />
                   </td>
-                 
+
                   <td>
                     <Form.Control as="textarea" rows={3} />
                   </td>
                 </tr>
                 <tr>
-                  
                   <td>
                     <Form.Control as="textarea" rows={3} />
                   </td>
-                  
+
                   <td>
                     <Form.Control as="textarea" rows={3} />
                   </td>
-                  
+
                   <td>
                     <Form.Control as="textarea" rows={3} />
                   </td>
@@ -221,12 +262,16 @@ const CreateGig2 = () => {
               </tbody>
             </Table>
             <Row>
-                <Col sm='1'>
-                    <Button type="reset" variant="success">Cancel</Button>
-                </Col>
-                <Col>
-                    <Button type="submit" variant="success">Save</Button>
-                </Col>
+              <Col sm="1">
+                <Button type="reset" variant="success">
+                  Cancel
+                </Button>
+              </Col>
+              <Col>
+                <Button type="submit" variant="success">
+                  Save
+                </Button>
+              </Col>
             </Row>
             <br></br>
             <br></br>

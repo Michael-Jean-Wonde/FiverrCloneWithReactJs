@@ -8,9 +8,15 @@
   }
   
   #fnpoop {
+    display: flex;
     padding-bottom: 5px;
     padding-top: 7px;
   }
+
+  #fnpoop p {
+    display: flex;
+    margin-right: 0;
+  }  
   
   #fnoop {
     border-top: groove;
