@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import path from 'path'
+import path from 'path';
+import cors from 'cors'
 import connectDB from './config/db.js';
 import gigRoutes from './routes/gigRoutes.js';
 import getjobRoutes from './routes/getjobRoutes.js';
@@ -11,14 +12,17 @@ import uploadRoutes from './routes/uploadRoutes.js';
 
 dotenv.config();
 connectDB();
+
+
 const app = express();
+app.use(cors())
 app.use(express.json());
 app.get('/', (req,res)=>{
     res.send('Api is running....')
 });
 
 app.use('/gig', gigRoutes);
-app.use('/postjob',jobRoute);
+app.use('/',jobRoute);
 app.use('/getjob',getjobRoutes);
 app.use('/user', userRoutes);
 app.use('/upload', uploadRoutes);

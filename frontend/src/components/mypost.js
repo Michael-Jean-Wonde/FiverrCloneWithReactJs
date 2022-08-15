@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import {
   Button,
   Form,
@@ -12,12 +12,34 @@ import {
 import BuyerHeader from "./buyerHeader";
 
 const Mypost = () => {
+  const [jobs, setjobs] = useState([
+    {
+      maintitle: "",
+      category: "",
+      category2: "",
+      days: "",
+      price: "",
+    },
+  ]);
+
+  useEffect(() => {
+    fetch("/jobsList")
+      .then((res) => {
+        if (res.ok) {
+          return res.json();
+        }
+      })
+      .then((jsonRes) => setjobs(jsonRes));
+  });
+
   return (
     <div>
-        <BuyerHeader />
+      <BuyerHeader />
+      <br/>
       <Container>
-        <br />
-        <Card>
+        
+            
+            <Card>
           <ListGroup>
             <ListGroup.Item>
               <h6>Active Post</h6>
@@ -31,19 +53,26 @@ const Mypost = () => {
                     <Col sm='2'><b>RECIVED REQUEST</b></Col>
                 </Row>
             </ListGroup.Item>
+            {jobs.map(
+          (j) => (
             <div>
                 <ListGroup.Item>
                     <Row>
-                        <Col sm='2'>Feb/8/2021</Col>
-                        <Col sm='4'>Title</Col>
-                        <Col sm='2'>Days</Col>
-                        <Col sm='2'>Price</Col>
-                        <Col sm='2'>Number of Recived Request</Col>
+                        <Col sm='2'>{j.category}</Col>
+                        <Col sm='4'>{j.maintitle}</Col>
+                        <Col sm='2'>{j.days}</Col>
+                        <Col sm='2'>{j.price}</Col>
+                        <Col sm='2'>{j.category2}</Col>
                     </Row>
                 </ListGroup.Item>
             </div>
+            )
+            )}
           </ListGroup>
         </Card>
+          
+        <br></br>
+        
       </Container>
     </div>
   );

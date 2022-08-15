@@ -18,30 +18,30 @@ const CreateGig = () => {
   const [metadata, setMetadata] = useState(false);
   const [tag, setTag] = useState([]);
 
-  const dispatch = useDispatch();
-  const userLogin = useSelector((state) => state.userLogin);
-  const creategigdata = useSelector((state) => state.creategigdata);
-  const { gig } = creategigdata;
-  const { userinfo } = userLogin;
+  // const dispatch = useDispatch();
+  // const userLogin = useSelector((state) => state.userLogin);
+  // const creategigdata = useSelector((state) => state.creategigdata);
+  // const { gig } = creategigdata;
+  // const { userinfo } = userLogin;
 
-  let navigate = useNavigate();
-  useEffect(() => {
-    if (userinfo) {
-      if (userinfo.isBuyer === true) {
-        navigate("/");
-      }
-    } else {
-      navigate("/");
-    }
-    if (gig) {
-      navigate("/create-gig2");
-    }
-  }, [navigate, gig, userinfo]);
-  console.log(gig);
+  // let navigate = useNavigate();
+  // useEffect(() => {
+  //   if (userinfo) {
+  //     if (userinfo.isBuyer === true) {
+  //       navigate("/");
+  //     }
+  //   } else {
+  //     navigate("/");
+  //   }
+  //   if (gig) {
+  //     navigate("/create-gig2");
+  //   }
+  // }, [navigate, gig, userinfo]);
+  // console.log(gig);
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(createGig(maintitle,category,category2,services,metadata,tag));
+    // dispatch(createGig(maintitle,category,category2,services,metadata,tag));
   };
 
   makeStyles((theme) => ({
@@ -63,6 +63,7 @@ const CreateGig = () => {
                   <Col sm="3">GIG TITLE</Col>
                   <Col className="bnm" sm="9">
                     <Form.Control
+                    name="maintitle"
                       placeholder="I WILL"
                       value={maintitle}
                       onChange={(e) => setMaintitle(e.target.value)}

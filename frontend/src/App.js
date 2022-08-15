@@ -19,6 +19,7 @@ import Dashboard from "./admin/dashboard";
 import Profile from "./pages/profile";
 import SearchJobs from "./pages/searchJob/search/searchJob";
 import Room from "./pages/chat/room";
+import BuyerRequests from "./pages/buyerRequests";
 
 
 function App() {
@@ -140,6 +141,15 @@ function App() {
             element={
               <>
                 <Mypost />
+              </>
+            }
+          />
+          <Route
+            exact
+            path="/buyer-requests"
+            element={
+              <>
+                <BuyerRequests />
               </>
             }
           />
