@@ -16,7 +16,7 @@ const SigninForm = () => {
   useEffect(() => {
     if (userinfo) {
       if (userinfo.isBuyer === true) {
-        navigate("/user-buyer");
+        navigate("/profile");
       } else {
         navigate("/user");
       }

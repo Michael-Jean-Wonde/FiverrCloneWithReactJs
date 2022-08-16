@@ -1,6 +1,6 @@
 import React from "react";
 import './userHeader.css';
-import { Row, Col, NavDropdown } from "react-bootstrap";
+import { Row, Col, Button } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import { logout } from "../action/userAction.js";
 import { useDispatch } from "react-redux";
@@ -11,7 +11,7 @@ const BuyerHeader = () => {
   return (
     <div className="userMenu">
       <Row>
-        <Col sm="10">
+        <Col sm="8">
           <ul>
             <li>
             <Link to="/">
@@ -26,13 +26,10 @@ const BuyerHeader = () => {
               <a href="/dashboard">Dashboard</a>
             </li>
             <li>
-              <a href="/profile">profile</a>
+              <a href="/profile">Professionals</a>
             </li>
             <li>
-              <a href="/">Messages</a>
-            </li>
-            <li>
-              <a href="/">community</a>
+              <a href="/buyer-room">Messages</a>
             </li>
             <li>
               <a href="/postRequest">Post A Request</a>
@@ -42,9 +39,19 @@ const BuyerHeader = () => {
             </li>
           </ul>
         </Col>
-        <Col sm="2">
+        <Col sm="4">
           <ul>
-            <li>
+          <li className="bli">
+                <a href="/join">
+                  <Button variant="outline-success">Become A Seller</Button>{" "}
+                </a>
+              </li>
+              <li className="bli">
+                <a href="/">
+                  <Button variant="outline-success" onClick={()=> dispatch(logout())}>Logout</Button>{" "}
+                </a>
+              </li>
+            {/* <li>
               <img
                 width="35px"
                 height="35px"
@@ -54,17 +61,12 @@ const BuyerHeader = () => {
               />
             </li>
             <NavDropdown title=" " id="username">
-                <LinkContainer to='/profile'>
-                    <NavDropdown.Item>
-                        Profile
-                    </NavDropdown.Item>
-                </LinkContainer>
                 <LinkContainer to='/'>
                         <NavDropdown.Item onClick={()=> dispatch(logout())}>
                             Logout
                         </NavDropdown.Item>
                     </LinkContainer>
-            </NavDropdown>
+            </NavDropdown> */}
           </ul>
         </Col>
       </Row>

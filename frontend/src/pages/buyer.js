@@ -11,15 +11,8 @@ const Buyer = () => {
   return (
     <div>
       <BuyerHeader />
-      {/* <ProfessionalsList /> */}
       <br></br>
-      <div className="showAllGig">
-          <Row>
-              <Col sm={12} md={6} lg={4}>
-                <Gigslist />
-              </Col>
-          </Row>
-      </div>
+      <ProfessionalsList /> 
     </div>
   );
 };

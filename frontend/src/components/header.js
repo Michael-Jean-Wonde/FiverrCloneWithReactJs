@@ -99,36 +99,6 @@ const Header = () => {
             </Col>
 
             <ul className="navigation">
-              <li className="l1">
-                <a className={navbar ? "linkcolor" : "disactivecolor"} href="/">
-                  {" "}
-                  Fiverr Business
-                </a>
-              </li>
-              <li className="sli">
-                <a className={navbar ? "linkcolor" : "disactivecolor"} href="/">
-                  Explore
-                </a>
-              </li>
-              <li className="sli">
-                <a className={navbar ? "linkcolor" : "disactivecolor"} href="/">
-                  <span className="global">
-                    <img
-                      src="images/node.png"
-                      alt="logo"
-                      color="green"
-                      width="14px"
-                      height="14px"
-                    />
-                  </span>
-                  <span>English</span>
-                </a>
-              </li>
-              <li className="tli">
-                <a className={navbar ? "linkcolor" : "disactivecolor"} href="/">
-                  RsPKR
-                </a>
-              </li>
               <li className="tli">
                 <a className={navbar ? "linkcolor" : "disactivecolor"} href="/">
                   Become a Seller

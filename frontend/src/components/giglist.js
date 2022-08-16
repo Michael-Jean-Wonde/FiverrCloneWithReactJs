@@ -29,19 +29,59 @@ const Gigslist = () => {
   });
 
   return (
-    <div>
+    <div className="gigList">
       {gigs.map((g) => (
           <div class="card" style={{width: "18rem"}}>
+            <Row>
+            <Row>
+              <Col className="colImg">
             <img class="card-img-top" src={g.image} alt="Card image cap" />
+            </Col>
+            <Col className="tttt">
+            <Row>
+            <h5 class="card-title">{g.title}</h5>
+            </Row>
+            <Row>
+            <p class="card-text">
+                {g.categoryOne}
+              </p>
+            </Row>
+            <Row>
+            <p class="card-text">
+                {g.serviceType}
+              </p>
+            </Row>
+            <Row>
+            <p class="card-text">
+                {g.price}$/hr
+              </p>
+            </Row>
+            </Col>
+            </Row>
             <div class="card-body">
-              <h5 class="card-title">{g.title}</h5>
+              <Row>
               <p class="card-text">
                 {g.description}
               </p>
-              <a href="#" class="btn btn-primary">
-                Go somewhere
+              </Row>
+              <Row className="btnRow">
+              <Row>
+                <Col sm="7">
+                <a href="/single-professional" class="btn btn-primary">
+                View Portfolio
               </a>
+                </Col>
+                <Col sm="4">
+                <a href="/buyer-room" class="btn btn-primary">
+                Contact
+              </a>
+                </Col>
+              </Row>
+              </Row>
+              
+              
             </div>
+            </Row>
         </div>
       ))}
     </div>

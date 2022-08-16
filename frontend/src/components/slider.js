@@ -44,7 +44,7 @@ const Slider = () => {
         <Carousel.Item>
           <img
             className="d-block w-100"
-            src="images/prosCol.jpg"
+            src="images/proImage.png"
             alt="first slide"
           />
         </Carousel.Item>

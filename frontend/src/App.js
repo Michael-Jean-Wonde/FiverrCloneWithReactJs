@@ -18,8 +18,9 @@ import UserDetail from "./components/userDetail";
 import Dashboard from "./admin/dashboard";
 import Profile from "./pages/profile";
 import SearchJobs from "./pages/searchJob/search/searchJob";
-import Room from "./pages/chat/room";
+import BuyerRoom from "./pages/chat/buyerRoom";
 import BuyerRequests from "./pages/buyerRequests";
+import SingleProfessional from "./pages/portfolioPage/singleProfessional";
 
 
 function App() {
@@ -119,10 +120,10 @@ function App() {
           />
           <Route
             exact
-            path="/room"
+            path="/buyer-room"
             element={
               <>
-                <Room />
+                <BuyerRoom />
               </>
             }
           />
@@ -150,6 +151,15 @@ function App() {
             element={
               <>
                 <BuyerRequests />
+              </>
+            }
+          />
+          <Route
+            exact
+            path="/single-professional"
+            element={
+              <>
+                <SingleProfessional />
               </>
             }
           />

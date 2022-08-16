@@ -4,15 +4,13 @@
     margin-right: auto;
     justify-content: center;
     display: flex;
-    background: gray;
   }
   
   .home-container {
     max-width: 1600px;
     display: flex;
-    flex-direction: column;
     color: white;
-    background-color: gray;
+    background-color: rgb(201, 198, 198);
   }
   
   .home-container p {
