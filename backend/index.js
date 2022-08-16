@@ -15,13 +15,14 @@ connectDB();
 
 
 const app = express();
-app.use(cors())
+app.use(cors());
+app.use(express.json({limit: '50mb'}));
 app.use(express.json());
 app.get('/', (req,res)=>{
     res.send('Api is running....')
 });
 
-app.use('/gig', gigRoutes);
+app.use('/', gigRoutes);
 app.use('/',jobRoute);
 app.use('/getjob',getjobRoutes);
 app.use('/user', userRoutes);

@@ -1,6 +1,4 @@
 import express from "express";
-import { Addjob, getjobbyuser } from "../controllers/jobController.js";
-import { secure } from "../middleware/authMiddleware.js";
 const router = express.Router();
 import Job from "../models/jobModel.js";
 
@@ -24,7 +22,5 @@ router.route("/postJob").post((req, res) => {
 router.route("/jobsList").get((req, res) => {
   Job.find().then((foundJobs) => res.json(foundJobs));
 });
-// router.post('/insert', Addjob)
-// router.route('/:id').get(secure, getjobbyuser)
 
 export default router;

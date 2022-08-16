@@ -1,15 +1,18 @@
-import React from 'react';
+import React, {Suspense} from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App.js';
 import { Provider } from 'react-redux';
 import store from './store.js';
 import reportWebVitals from './reportWebVitals';
+import './utills/i18next.js';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+    <Suspense fallback="Loading...">
     <Provider store={store}>
     <App />
     </Provider>
+    </Suspense>
   
 );
 

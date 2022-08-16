@@ -1,48 +1,47 @@
-import React, { useState, useEffect } from "react";
-import './createGig.css';
+import React, { useState } from "react";
+import "./createGig.css";
 import UserHeader from "../components/userHeader";
 import { Button, Form, Card, Col, Container, Row } from "react-bootstrap";
 import { makeStyles } from "@material-ui/core/styles";
-import TextField from "@material-ui/core/TextField";
-import Autocomplete from "@material-ui/lab/Autocomplete";
-import { Chip } from "@material-ui/core";
-import { useNavigate } from "react-router-dom";
-import { createGig } from "../action/productListAction";
-import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
+import FileBase64 from "react-file-base64";
 
 const CreateGig = () => {
-  const [maintitle, setMaintitle] = useState("");
-  const [category, setCategory] = useState("");
-  const [category2, setCategory2] = useState("");
-  const [services, setServices] = useState("");
-  const [metadata, setMetadata] = useState(false);
-  const [tag, setTag] = useState([]);
+  const [input, setInput] = useState({
+    title: "",
+    categoryOne: "",
+    categoryTwo: "",
+    serviceType: "",
+    price: "",
+    description: "",
+    image: "",
+  });
 
-  // const dispatch = useDispatch();
-  // const userLogin = useSelector((state) => state.userLogin);
-  // const creategigdata = useSelector((state) => state.creategigdata);
-  // const { gig } = creategigdata;
-  // const { userinfo } = userLogin;
+  function handleChange(event) {
+    const { name, value } = event.target;
 
-  // let navigate = useNavigate();
-  // useEffect(() => {
-  //   if (userinfo) {
-  //     if (userinfo.isBuyer === true) {
-  //       navigate("/");
-  //     }
-  //   } else {
-  //     navigate("/");
-  //   }
-  //   if (gig) {
-  //     navigate("/create-gig2");
-  //   }
-  // }, [navigate, gig, userinfo]);
-  // console.log(gig);
+    setInput((prevInput) => {
+      return {
+        ...prevInput,
+        [name]: value,
+      };
+    });
+  }
 
-  const submitHandler = (e) => {
-    e.preventDefault();
-    // dispatch(createGig(maintitle,category,category2,services,metadata,tag));
-  };
+  function handleClick(event) {
+    event.preventDefault();
+    const newGig = {
+      title: input.title,
+      categoryOne: input.categoryOne,
+      categoryTwo: input.categoryTwo,
+      serviceType: input.serviceType,
+      price: input.price,
+      description: input.description,
+      image: input.image,
+    };
+    axios.post("http://localhost:5000/addGig", newGig);
+    console.log(newGig);
+  }
 
   makeStyles((theme) => ({
     root: {
@@ -55,7 +54,7 @@ const CreateGig = () => {
     <div className="mainnnn">
       <UserHeader />
       <div className="creategigs">
-        <Form onSubmit={submitHandler}>
+        <Form>
           <Container>
             <Card style={{ width: "45rem" }}>
               <Card.Body>
@@ -63,195 +62,103 @@ const CreateGig = () => {
                   <Col sm="3">GIG TITLE</Col>
                   <Col className="bnm" sm="9">
                     <Form.Control
-                    name="maintitle"
+                      name="title"
                       placeholder="I WILL"
-                      value={maintitle}
-                      onChange={(e) => setMaintitle(e.target.value)}
+                      value={input.title}
+                      onChange={handleChange}
                     ></Form.Control>
                   </Col>
                 </Row>
                 <Row>
                   <Col sm="3">CATEGORY</Col>
-                  <Col className="bnm">
-                    <Form.Group as={Col}>
-                      <Form.Control
-                        as="select"
-                        value={category}
-                        onChange={(e) => setCategory(e.target.value)}
-                      >
-                        <option>Choose</option>
-                        <option>Programming</option>
-                      </Form.Control>
-                    </Form.Group>
+                  <Col sm="4" style={{ marginTop: "10px" }}>
+                    <select
+                      className="form-control"
+                      name="categoryOne"
+                      value={input.categoryOne}
+                      onChange={handleChange}
+                    >
+                      <option>Choose</option>
+                      <option>Programming</option>
+                      <option>Programming</option>
+                      <option>Programming</option>
+                    </select>
                   </Col>
-                  <Col className="bnm">
-                    <Form.Group as={Col}>
-                      <Form.Control
-                        as="select"
-                        value={category2}
-                        onChange={(e) => setCategory2(e.target.value)}
-                      >
-                        <option>Advanced</option>
-                        <option>Moderate</option>
-                      </Form.Control>
-                    </Form.Group>
+                  <Col sm="4" style={{ marginTop: "10px" }}>
+                    <select
+                      class="form-control"
+                      name="categoryTwo"
+                      value={input.categoryTwo}
+                      onChange={handleChange}
+                    >
+                      <option>Choose</option>
+                      <option>Advanced</option>
+                      <option>Moderate</option>
+                      <option>Programming</option>
+                    </select>
                   </Col>
                 </Row>
                 <Row>
                   <Col sm="3">SERVICE TYPE</Col>
-                  <Col className="bnm">
-                    <Form.Group as={Col}>
-                      <Form.Control
-                        as="select"
-                        value={services}
-                        onChange={(e) => setServices(e.target.value)}
-                      >
-                        <option>Full Website Creation</option>
-                        <option>Customization</option>
-                        <option>Bug Fix</option>
-                      </Form.Control>
-                    </Form.Group>
+                  <Col sm="4" style={{ marginTop: "10px" }}>
+                    <select
+                      className="form-control"
+                      name="serviceType"
+                      value={input.serviceType}
+                      onChange={handleChange}
+                    >
+                      <option>Choose</option>
+                      <option>Remote</option>
+                      <option>Full Time</option>
+                      <option>Programming</option>
+                    </select>
                   </Col>
                   <Col></Col>
                 </Row>
                 <Row>
-                  <Col sm="3">GIG METADATA</Col>
+                  <Col sm="3">PRICE</Col>
+                  <Col>
+                    <input
+                      name="price"
+                      type="number"
+                      step="5"
+                      max="10000"
+                      style={{ lineHeight: 1.5 }}
+                      value={input.price}
+                      onChange={handleChange}
+                    />
+                    $/Hr
+                  </Col>
+                  <Col></Col>
+                </Row>
+                <Row>
+                  <Col sm="3">Description</Col>
                   <Col sm="9" className="bnm">
-                    <div className="tworowbar">
-                      <Row>
-                        <Col className="borderonerow" sm="3">
-                          PLATFORM
-                        </Col>
-                        <Col sm="9">
-                          Select the platform for which you provide services*
-                        </Col>
-                      </Row>
-                      <Row>
-                        <Col className="borderonerow" sm="3"></Col>
-                        <Col className="radiobtn">
-                          <Row>
-                            <Col>
-                              <input
-                                type="radio"
-                                id="other"
-                                name="radio"
-                                value="JavaScript"
-                                onChange={(e) => setMetadata(e.target.value)}
-                              />
-                              <label htmlFor="radio1">JavaScript</label>
-                            </Col>
-                            <Col>
-                              <input
-                                type="radio"
-                                id="other"
-                                name="radio"
-                                value="React"
-                                onChange={(e) => setMetadata(e.target.value)}
-                              />
-                              <label htmlFor="radio1">React</label>
-                            </Col>
-                          </Row>
-                          <br></br>
-                          <Row>
-                            <Col>
-                              <input
-                                type="radio"
-                                id="other"
-                                name="radio"
-                                value="NodeJs"
-                                onChange={(e) => setMetadata(e.target.value)}
-                              />
-                              <label htmlFor="radio1">NodeJs</label>
-                            </Col>
-                            <Col>
-                              <input
-                                type="radio"
-                                id="other"
-                                name="radio"
-                                value="Flutter"
-                                onChange={(e) => setMetadata(e.target.value)}
-                              />
-                              <label htmlFor="radio1">Flutter</label>
-                            </Col>
-                          </Row>
-                          <br></br>
-                          <Row>
-                            <Col>
-                              <input
-                                type="radio"
-                                id="other"
-                                name="radio"
-                                value="Python"
-                                onChange={(e) => setMetadata(e.target.value)}
-                              />
-                              <label htmlFor="radio1">Python</label>
-                            </Col>
-                            <Col>
-                              <input
-                                type="radio"
-                                id="other"
-                                name="radio"
-                                value="Java"
-                                onChange={(e) => setMetadata(e.target.value)}
-                              />
-                              <label htmlFor="radio1">Java</label>
-                            </Col>
-                          </Row>
-                          <br></br>
-                          <Row>
-                            <Col>
-                              <input
-                                type="radio"
-                                id="other"
-                                name="radio"
-                                value="ASP.NET"
-                                onChange={(e) => setMetadata(e.target.value)}
-                              />
-                              <label htmlFor="radio1">ASP.NET</label>
-                            </Col>
-                            <Col>
-                              <input
-                                type="radio"
-                                id="other"
-                                name="radio"
-                                value="HTML"
-                                onChange={(e) => setMetadata(e.target.value)}
-                              />
-                              <label htmlFor="radio1">HTML</label>
-                            </Col>
-                          </Row>
-                          <br></br>
-                        </Col>
-                      </Row>
+                    <div className="form-group">
+                      <textarea
+                        name="description"
+                        className="form-control"
+                        id="exampleFormControlTextarea1"
+                        rows="3"
+                        value={input.description}
+                        onChange={handleChange}
+                      ></textarea>
                     </div>
                   </Col>
                 </Row>
                 <Row>
-                  <Col sm="3">SEARCH TAGS</Col>
+                  <Col sm="3" style={{ marginTop: "10px" }}>
+                    IMAGE
+                  </Col>
                   <Col className="bnm">
-                    <Autocomplete
-                      onChange={(event, value) => setTag(value)}
-                      multiple
-                      id="tags-filled"
-                      options={top10.map((option) => option.title)}
-                      freeSolo
-                      renderTags={(value, getTagProps) =>
-                        value.map((option, index) => (
-                          <Chip
-                            variant="outlined"
-                            label={option}
-                            {...getTagProps({ index })}
-                          />
-                        ))
-                      }
-                      renderInput={(params) => (
-                        <TextField
-                          {...params}
-                          variant="filled"
-                          placeholder="Favorites"
-                        />
-                      )}
-                    />
+                    <div className="form-group" style={{ lineHeight: 2, marginTop: "15px" }}>
+                      <FileBase64
+                        multiple={false}
+                        onDone={({ base64 }) =>
+                          setInput({ ...input, image: base64 })
+                        }
+                      />
+                    </div>
                   </Col>
                 </Row>
               </Card.Body>
@@ -263,7 +170,7 @@ const CreateGig = () => {
                 </Button>
               </Col>
               <Col sm="1">
-                <Button type="submit" variant="success">
+                <Button type="submit" variant="success" onClick={handleClick}>
                   Save
                 </Button>
               </Col>

@@ -41,7 +41,10 @@
 }
 
 .logo img {
-  height: 26px;
+  margin-top: -12px;
+    object-fit: contain;
+    height: 60px;
+    margin-left: 20px;
 }
 
 .dot {
@@ -59,7 +62,7 @@
 }
 
 .searchBar {
-  margin-bottom: 12px;
+  margin-top: 20px;
   padding-left: 25px;
   display: flex;
   width: 100%;

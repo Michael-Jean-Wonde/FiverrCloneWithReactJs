@@ -41,10 +41,10 @@ const CreateGig2 = () => {
   const [image, setImage] = useState("");
   const [uploading, setUploading] = useState(false);
 
-  const dispatch = useDispatch();
-  const creategigdata = useSelector((state) => state.creategigdata);
-  const { gig } = creategigdata;
-  const { title, category, category2, service, metadata, tag } = gig;
+  // const dispatch = useDispatch();
+  // const creategigdata = useSelector((state) => state.creategigdata);
+  // const { gig } = creategigdata;
+  // const { title, category, category2, service, metadata, tag } = gig;
 
   return (
     <div>

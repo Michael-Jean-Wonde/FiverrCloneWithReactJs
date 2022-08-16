@@ -16,6 +16,9 @@ import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 
+import '../utills/i18next';
+import { useTranslation } from "react-i18next";
+
 const useStyles = makeStyles((theme) => ({
   modal: {
     display: "flex",
@@ -35,6 +38,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Header = () => {
+  const {t} = useTranslation();
   const [navbar, setNavbar] = useState();
   const classes = useStyles();
   const [open, setopen] = React.useState();
@@ -70,12 +74,12 @@ const Header = () => {
               />
               <div className="nm">
                 <div className={navbar ? "disactive" : "logo"}>
-                  <img src="images/company-logo.jpg" alt="logo" />
+                  <img src="https://s3.amazonaws.com/fjds/gig_company/original/20/freelancer-logo.png?1587072521" alt="logo" />
                   <div className="dot"></div>
                 </div>
               </div>
               <div className={navbar ? "logo" : "disactive"}>
-                <img src="images/ReactJS.png" alt="logo" />
+                <img src="https://s3.amazonaws.com/fjds/gig_company/original/20/freelancer-logo.png?1587072521" alt="logo" />
               </div>
               <div className={navbar ? "searchBar" : "searchBar searbarhide"}>
                 <Form inline className="form">
@@ -136,7 +140,7 @@ const Header = () => {
                 }
                 onClick={handleOpen}
               >
-                Sign In
+                {t("sign_in")}
               </li>
               <li className="bli">
                 <a href="/join">
