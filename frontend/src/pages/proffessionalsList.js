@@ -8,8 +8,8 @@ import Gigslist from '../components/giglist';
 const ProfessionalsList = () => {
   return (
     <div>
-      <div className='home'>
-        <div className='home-container'>
+      <div className='container'>
+        <div className='row align-items-center'>
           <div className='home-row'>
           <Gigslist />
           </div>

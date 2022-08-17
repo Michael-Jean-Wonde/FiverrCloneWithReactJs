@@ -93,7 +93,7 @@ const Header = () => {
                     placeholder="Find services here..."
                     className="mr-lg-0"
                   />
-                  <button className="btnn">Search</button>
+                  <button className="btnn">{t("search")}</button>
                 </Form>
               </div>
             </Col>
@@ -101,7 +101,7 @@ const Header = () => {
             <ul className="navigation">
               <li className="tli">
                 <a className={navbar ? "linkcolor" : "disactivecolor"} href="/">
-                  Become a Seller
+                {t("BecomeSeller")}
                 </a>
               </li>
               <li
@@ -114,7 +114,7 @@ const Header = () => {
               </li>
               <li className="bli">
                 <a href="/join">
-                  <Button variant="outline-success">Join</Button>{" "}
+                  <Button variant="outline-success">{t("join")}</Button>{" "}
                 </a>
               </li>
             </ul>

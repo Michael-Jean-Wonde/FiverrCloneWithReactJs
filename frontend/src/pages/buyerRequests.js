@@ -36,8 +36,8 @@ const BuyerRequests = () => {
             <div class="card-body">
               <h5 class="card-title">{j.category}</h5>
               <p class="card-text">{j.maintitle}</p>
-              <a href="#" class="btn btn-primary">
-                Go somewhere
+              <a href="/user-room" class="btn btn-primary">
+                Contact Buyer
               </a>
             </div>
           </div>

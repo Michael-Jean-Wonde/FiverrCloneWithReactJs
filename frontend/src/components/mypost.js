@@ -10,8 +10,11 @@ import {
   ListGroupItem,
 } from "react-bootstrap";
 import BuyerHeader from "./buyerHeader";
+import '../utills/i18next';
+import { useTranslation } from "react-i18next";
 
 const Mypost = () => {
+  const {t} = useTranslation();
   const [jobs, setjobs] = useState([
     {
       maintitle: "",
@@ -42,15 +45,15 @@ const Mypost = () => {
             <Card>
           <ListGroup>
             <ListGroup.Item>
-              <h6>Active Post</h6>
+              <h6>{t("activePost")}</h6>
             </ListGroup.Item>
             <ListGroup.Item>
                 <Row>
-                    <Col sm='2'><b>Date</b></Col>
-                    <Col sm='4'><b>REQUEST</b></Col>
-                    <Col sm='2'><b>DURATION</b></Col>
-                    <Col sm='2'><b>BUDGET</b></Col>
-                    <Col sm='2'><b>RECIVED REQUEST</b></Col>
+                <Col sm='2'><b>{t("date")}</b></Col>
+                    <Col sm='4'><b>{t("request")}</b></Col>
+                    <Col sm='2'><b>{t("duration")}</b></Col>
+                    <Col sm='2'><b>{t("budget")}</b></Col>
+                    <Col sm='2'><b>{t("recievedRequest")}</b></Col>
                 </Row>
             </ListGroup.Item>
             {jobs.map(

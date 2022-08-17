@@ -3,8 +3,11 @@ import { Button, Form, Container, Row, Col } from "react-bootstrap";
 import BuyerHeader from "../components/buyerHeader";
 import axios from "axios";
 
-const Postjob = () => {
+import '../utills/i18next';
+import { useTranslation } from "react-i18next";
 
+const Postjob = () => {
+  const {t} = useTranslation();
   const [input, setInput] = useState({
     maintitle: '',
     category: '',
@@ -65,29 +68,28 @@ const Postjob = () => {
             </Col>
           </Row>
           <br />
-          <h6>Choose a Category</h6>
+          <h6>{t("chooseCategory")}</h6>
           <Row>
             <Col sm="4">
               <select className="form-control" name="category" value={input.category} onChange={handleChange}>
-                <option>Choose</option>
-                <option>Programming</option>
-                <option>Programming</option>
-                <option>Programming</option>
+              <option>{t("choose")}</option>
+                <option>{t("programming")}</option>
+                <option>{t("programming")}</option>
+                <option>{t("programming")}</option>
               </select>
             </Col>
             <Col sm="4">
               <select className="form-control" name="category2" value={input.category2} onChange={handleChange}>
-                <option>Advanced</option>
-                <option>Moderate</option>
-                <option>Advanced</option>
-                <option>Moderate</option>
+              <option>{t("advanced")}</option>
+                <option>{t("moderate")}</option>
+                <option>{t("novice")}</option>
+                <option>{t("junior")}</option>
               </select>
             </Col>
           </Row>
           <br />
           <h6>
-            Once you place your order, when would you like your service
-            delivered?
+          {t("delivery")}
           </h6>
           <Row>
             <Col>
@@ -95,14 +97,14 @@ const Postjob = () => {
             </Col>
           </Row>
           <br />
-          <h6>What is your budget for this service?</h6>
+          <h6>{t("service")}?</h6>
           <Row>
             <Col sm="7">
               <input name="price" value={input.price} type="number" min="5" max="2000" onChange={handleChange} />$
             </Col>
             <Col sm="3">
               <Button type="submit" variant="success" onClick={handleClick}>
-                Post
+              {t("post")}
               </Button>
             </Col>
           </Row>

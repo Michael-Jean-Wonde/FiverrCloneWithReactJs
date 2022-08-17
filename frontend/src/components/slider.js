@@ -8,6 +8,9 @@ import Modal from "@material-ui/core/Modal";
 import Backdrop from "@material-ui/core/Backdrop";
 import Fade from "@material-ui/core/Fade";
 
+import '../utills/i18next';
+import { useTranslation } from "react-i18next";
+
 const useStyles = makeStyles((theme) => ({
   modal: {
     display: "flex",
@@ -27,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 const Slider = () => {
+  const {t} = useTranslation();
   const classes = useStyles();
   const [open, setopen] = React.useState();
   const handleOpen = () => {
@@ -65,16 +69,16 @@ const Slider = () => {
       </Carousel>
       <div className="hn">
         <p>
-          Find the perfect <i>Services for your Business</i>
+        {t("findBuziness")}
         </p>
         <button className="videoBanner__info--first" onClick={handleOpen}>
-          Hire a Freelancer
+        {t("hireFrelancer")}
         </button>
         <button className="videoBanner__info--second" onClick={handleOpen}>
-          Earn Money Freelancing
+        {t("earnMoney")}
         </button>
         <div className="popular">
-          Popular:
+        {t("popular")}:
           <Chip
             className="chip"
             variant="outlined"

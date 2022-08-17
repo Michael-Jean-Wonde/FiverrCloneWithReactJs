@@ -22,7 +22,7 @@ function DashboardContent() {
     const classes = useStyles();
 
     return (
-        <div className="dashboardContent">
+        <div className="container">
             {/* Card */}
             <div className="dashboardContent__card">
                 <span>

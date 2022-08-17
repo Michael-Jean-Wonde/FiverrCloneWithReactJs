@@ -1,76 +1,71 @@
 import React from "react";
-import './userHeader.css';
+import "./userHeader.css";
 import { Row, Col, Button } from "react-bootstrap";
-import { LinkContainer } from "react-router-bootstrap";
 import { logout } from "../action/userAction.js";
 import { useDispatch } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/js/dist/collapse';
+
+import '../utills/i18next';
+import { useTranslation } from "react-i18next";
 
 const BuyerHeader = () => {
+  const {t} = useTranslation();
   const dispatch = useDispatch();
   return (
-    <div className="userMenu">
-      <Row>
-        <Col sm="8">
-          <ul>
-            <li>
-            <Link to="/">
-                    <img
-                        className="header__logo"
-                        src="https://s3.amazonaws.com/fjds/gig_company/original/20/freelancer-logo.png?1587072521"
-                        alt="logo"
-                    />
-              </Link>
-            </li>
-            <li>
-              <a href="/dashboard">Dashboard</a>
-            </li>
-            <li>
-              <a href="/profile">Professionals</a>
-            </li>
-            <li>
-              <a href="/buyer-room">Messages</a>
-            </li>
-            <li>
-              <a href="/postRequest">Post A Request</a>
-            </li>
-            <li>
-              <a href="/mypost">My Post</a>
-            </li>
-          </ul>
-        </Col>
-        <Col sm="4">
-          <ul>
-          <li className="bli">
-                <a href="/join">
-                  <Button variant="outline-success">Become A Seller</Button>{" "}
-                </a>
-              </li>
-              <li className="bli">
-                <a href="/">
-                  <Button variant="outline-success" onClick={()=> dispatch(logout())}>Logout</Button>{" "}
-                </a>
-              </li>
-            {/* <li>
-              <img
-                width="35px"
-                height="35px"
-                className="userimg"
-                src="images/company-logo.jpg"
-                alt="userImages"
-              />
-            </li>
-            <NavDropdown title=" " id="username">
-                <LinkContainer to='/'>
-                        <NavDropdown.Item onClick={()=> dispatch(logout())}>
-                            Logout
-                        </NavDropdown.Item>
-                    </LinkContainer>
-            </NavDropdown> */}
-          </ul>
-        </Col>
-      </Row>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+          <img
+            className="header__logo"
+            src="https://s3.amazonaws.com/fjds/gig_company/original/20/freelancer-logo.png?1587072521"
+            alt="logo"
+            width="200px"
+          />
+        </a>
+        <button
+          type="button"
+          class="navbar-toggler"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarCollapse"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav">
+            <a class="nav-link" href="/dashboard">
+            {t("dashboard")}
+            </a>
+            <a class="nav-link" href="/profile">
+            {t("professionals")}
+            </a>
+            <a class="nav-link" href="/buyer-room">
+            {t("messages")}
+            </a>
+            <a class="nav-link" href="/postRequest">
+            {t("postRequest")}
+            </a>
+            <a class="nav-link" href="/mypost">
+            {t("myPost")}
+            </a>
+          </div>
+          <div class="navbar-nav ms-auto" style={{marginRight: "100px", }}>
+            <a href="/join">
+              <Button variant="outline-success" style={{marginRight: "30px", }}>Become A Seller</Button>{" "}
+            </a>
+
+            <a href="/">
+              <Button
+                variant="outline-success"
+                onClick={() => dispatch(logout())}
+              >
+                Logout
+              </Button>{" "}
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
   );
 };
 

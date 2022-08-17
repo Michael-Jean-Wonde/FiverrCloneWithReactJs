@@ -20,7 +20,9 @@ import Profile from "./pages/profile";
 import SearchJobs from "./pages/searchJob/search/searchJob";
 import BuyerRoom from "./pages/chat/buyerRoom";
 import BuyerRequests from "./pages/buyerRequests";
-import SingleProfessional from "./pages/portfolioPage/singleProfessional";
+import UserDashboard from "./admin/userDashboard";
+import UserRoom from "./pages/chat/room";
+// import SingleProfessional from "./pages/portfolioPage/singleProfessional";
 
 
 function App() {
@@ -46,7 +48,7 @@ function App() {
               </>
             }
           />
-          <Route
+          {/* <Route
             exact
             path="/user"
             element={
@@ -54,7 +56,7 @@ function App() {
                 <User />
               </>
             }
-          />
+          /> */}
           <Route
             exact
             path="/gigs"
@@ -102,10 +104,28 @@ function App() {
           />
           <Route
             exact
+            path="/userDashboard"
+            element={
+              <>
+                <UserDashboard />
+              </>
+            }
+          />
+          <Route
+            exact
             path="/profile"
             element={
               <>
                 <Profile />
+              </>
+            }
+          />
+          <Route
+            exact
+            path="/userDetail"
+            element={
+              <>
+                <UserDetail />
               </>
             }
           />
@@ -124,6 +144,15 @@ function App() {
             element={
               <>
                 <BuyerRoom />
+              </>
+            }
+          />
+          <Route
+            exact
+            path="/user-room"
+            element={
+              <>
+                <UserRoom />
               </>
             }
           />
@@ -154,7 +183,7 @@ function App() {
               </>
             }
           />
-          <Route
+          {/* <Route
             exact
             path="/single-professional"
             element={
@@ -162,7 +191,7 @@ function App() {
                 <SingleProfessional />
               </>
             }
-          />
+          /> */}
         </Routes>
       </Router>
     </div>

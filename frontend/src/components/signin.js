@@ -5,7 +5,11 @@ import { login } from "../action/userAction.js";
 import { useNavigate } from "react-router-dom";
 import { Form, Button } from "react-bootstrap";
 
+import '../utills/i18next';
+import { useTranslation } from "react-i18next";
+
 const SigninForm = () => {
+  const {t} = useTranslation();
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const dispatch = useDispatch();
@@ -18,7 +22,7 @@ const SigninForm = () => {
       if (userinfo.isBuyer === true) {
         navigate("/profile");
       } else {
-        navigate("/user");
+        navigate("/userDetail");
       }
     }
   }, [navigate, userinfo]);
@@ -31,7 +35,7 @@ const SigninForm = () => {
   return (
     <div className="signindiv">
       <Form className="signinform" onSubmit={submitHandler}>
-        <h4>Sign in to MMN-Freelance</h4>
+        <h4>{t("signin")}</h4>
         <Form.Group className="sinfg" controlId="formBasicEmail">
           <Form.Control
             className="sininput"
@@ -50,10 +54,10 @@ const SigninForm = () => {
             onChange={(e) => setpassword(e.target.value)}
           />
         </Form.Group>
-        {loading && <h5>....loading</h5>}
+        {loading && <h5>...{t("load")}</h5>}
         {error && <h5>{error}</h5>}
         <Button className="sinfg" variant="success" size="md" type="submit">
-          Submit
+        {t("submit")}
         </Button>
       </Form>
     </div>

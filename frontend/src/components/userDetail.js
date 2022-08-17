@@ -3,10 +3,17 @@ import './userDetail.css';
 import { Container, Col, Row } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faStar } from '@fortawesome/free-solid-svg-icons';
+import UserHeader from './userHeader';
+
+import '../utills/i18next';
+import { useTranslation } from "react-i18next";
 
 const UserDetail = () => {
+    const {t} = useTranslation();
   return (
     <div className='userdetail'>
+        <UserHeader />
+        <br />
         <div className='userinfo'>
             <Container>
                 <Row>
@@ -14,34 +21,34 @@ const UserDetail = () => {
                         <img width='60px' height='60px' src="images/userImage.jpg" alt="userImage" />
                     </Col>
                     <Col xs lg='6'>
-                        <h5>Michael</h5>
+                        <h5>{t("miki")}</h5>
                     </Col>
                     <Col xs lg='3'>
                         <FontAwesomeIcon icon={faStar} size='1x' color='#FFC100'></FontAwesomeIcon>
-                        N/A
+                        {t("anal")}
                     </Col>
                 </Row>
                 <br/>
                 <div className='lline'></div>
                 <Row>
-                    <Col xs lg='10'>Response Rate</Col>
+                    <Col xs lg='10'>{t("responseRate")}</Col>
                     <Col xs lg='2'> 100% </Col>
                 </Row>
                 <Row>
-                    <Col xs lg='10'>Delivered on Time</Col>
+                    <Col xs lg='10'>{t("deliveredTime")}</Col>
                     <Col xs lg='2'>100%</Col>
                 </Row>
                 <Row>
-                    <Col xs lg='10'> Order Completion</Col>
+                    <Col xs lg='10'>{t("orderCompletion")}</Col>
                     <Col xs lg='2'>100%</Col>
                 </Row>
                 <div className='line'></div>
                 <Row>
-                    <Col xs lg='10'>Earned in Feb</Col>
+                    <Col xs lg='10'>{t("earnedFeb")}</Col>
                     <Col xs lg='2'>$1000</Col>
                 </Row>
                 <Row>
-                    <Col xs lg='10'>Response Time</Col>
+                    <Col xs lg='10'>{t("responseTime")}</Col>
                     <Col xs lg='2'>5Hrs</Col>
                 </Row>
             </Container>

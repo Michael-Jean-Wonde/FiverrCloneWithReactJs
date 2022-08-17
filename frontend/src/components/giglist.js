@@ -5,7 +5,12 @@ import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faStar } from "@fortawesome/free-solid-svg-icons";
 
+import '../utills/i18next';
+import { useTranslation } from "react-i18next";
+
 const Gigslist = () => {
+  const {t} = useTranslation();
+  
   const [gigs, setGigs] = useState([
     {
       title: "",
@@ -29,61 +34,57 @@ const Gigslist = () => {
   });
 
   return (
-    <div className="gigList">
+    <div class="container">
+      <div class="row">
       {gigs.map((g) => (
-          <div class="card" style={{width: "18rem"}}>
-            <Row>
+        <div class="col-12 col-md-6 col-lg-4">
+      
+        <div class="card">
+          <Row>
             <Row>
               <Col className="colImg">
-            <img class="card-img-top" src={g.image} alt="Card image cap" />
-            </Col>
-            <Col className="tttt">
-            <Row>
-            <h5 class="card-title">{g.title}</h5>
-            </Row>
-            <Row>
-            <p class="card-text">
-                {g.categoryOne}
-              </p>
-            </Row>
-            <Row>
-            <p class="card-text">
-                {g.serviceType}
-              </p>
-            </Row>
-            <Row>
-            <p class="card-text">
-                {g.price}$/hr
-              </p>
-            </Row>
-            </Col>
+                <img class="card-img-top" src={g.image} alt="Card image cap" />
+              </Col>
+              <Col className="tttt">
+                <Row>
+                  <h5 class="card-title">{g.title}</h5>
+                </Row>
+                <Row>
+                  <p class="card-text">{g.categoryOne}</p>
+                </Row>
+                <Row>
+                  <p class="card-text">{g.serviceType}</p>
+                </Row>
+                <Row>
+                  <p class="card-text">{g.price}$/hr</p>
+                </Row>
+              </Col>
             </Row>
             <div class="card-body">
               <Row>
-              <p class="card-text">
-                {g.description}
-              </p>
+                <p class="card-text">{g.description}</p>
               </Row>
               <Row className="btnRow">
-              <Row>
-                <Col sm="7">
-                <a href="/single-professional" class="btn btn-primary">
-                View Portfolio
-              </a>
-                </Col>
-                <Col sm="4">
-                <a href="/buyer-room" class="btn btn-primary">
-                Contact
-              </a>
-                </Col>
+                <Row>
+                  <Col sm="7">
+                    <a href="http://localhost:1234/#" class="btn btn-primary">
+                    {t("viewPortfolio")}
+                    </a>
+                  </Col>
+                  <Col sm="4">
+                    <a href="/buyer-room" class="btn btn-primary">
+                    {t("Contact")}
+                    </a>
+                  </Col>
+                </Row>
               </Row>
-              </Row>
-              
-              
             </div>
-            </Row>
+          </Row>
         </div>
+      
+      </div>
       ))}
+      </div>
     </div>
   );
 };
