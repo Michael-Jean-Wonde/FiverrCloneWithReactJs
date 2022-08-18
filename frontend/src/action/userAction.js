@@ -45,7 +45,7 @@ export const logout = () => async (dispatch) => {
   localStorage.removeItem("userinfo");
 };
 
-export const register = (name, email, password, buyer) => async (dispatch) => {
+export const register = (first_name, last_name, email, password, buyer) => async (dispatch) => {
   try {
     dispatch({
       type: USER_REGISTER_REQUEST,
@@ -57,7 +57,7 @@ export const register = (name, email, password, buyer) => async (dispatch) => {
     };
     const { data } = await axios.post(
       "/user/register",
-      { name, email, password, buyer },
+      { first_name, last_name, email, password, buyer },
       config
     );
     dispatch({

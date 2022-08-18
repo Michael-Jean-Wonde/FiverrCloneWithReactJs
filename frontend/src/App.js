@@ -22,6 +22,8 @@ import BuyerRoom from "./pages/chat/buyerRoom";
 import BuyerRequests from "./pages/buyerRequests";
 import UserDashboard from "./admin/userDashboard";
 import UserRoom from "./pages/chat/room";
+import Payment from "./pages/payment/payment";
+import PaymentSuccess from "./pages/payment/paymentSuccess";
 // import SingleProfessional from "./pages/portfolioPage/singleProfessional";
 
 
@@ -180,6 +182,24 @@ function App() {
             element={
               <>
                 <BuyerRequests />
+              </>
+            }
+          />
+          <Route
+            exact
+            path="/payment"
+            element={
+              <>
+                <Payment />
+              </>
+            }
+          />
+          <Route
+            exact
+            path="/payment_success"
+            element={
+              <>
+                <PaymentSuccess />
               </>
             }
           />

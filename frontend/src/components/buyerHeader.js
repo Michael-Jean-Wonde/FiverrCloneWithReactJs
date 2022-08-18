@@ -2,14 +2,17 @@ import React from "react";
 import "./userHeader.css";
 import { Row, Col, Button } from "react-bootstrap";
 import { logout } from "../action/userAction.js";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/js/dist/collapse';
 
 import '../utills/i18next';
 import { useTranslation } from "react-i18next";
+import PayButtons from "../pages/payment/payment";
 
 const BuyerHeader = () => {
+  const userLogin = useSelector((state) => state.userLogin);
+  const { loading, error, userinfo } = userLogin;
   const {t} = useTranslation();
   const dispatch = useDispatch();
   return (
@@ -48,6 +51,7 @@ const BuyerHeader = () => {
             <a class="nav-link" href="/mypost">
             {t("myPost")}
             </a>
+            <PayButtons cartItems={Array.from(userinfo)} />
           </div>
           <div class="navbar-nav ms-auto" style={{marginRight: "100px", }}>
             <a href="/join">

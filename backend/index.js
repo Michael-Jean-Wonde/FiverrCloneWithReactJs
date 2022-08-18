@@ -9,6 +9,9 @@ import jobRoute from './routes/jobRoutes.js';
 import userRoutes from './routes/userRoutes.js';
 import uploadRoutes from './routes/uploadRoutes.js';
 
+import checkOut from './paymentServer.js';
+import stripe from './paymentServer.js'
+
 
 dotenv.config();
 connectDB();
@@ -24,11 +27,19 @@ app.get('/', (req,res)=>{
 
 app.use('/', gigRoutes);
 app.use('/',jobRoute);
+// Checkout request handler
+app.use("/api/stripe", stripe);
+app.post("/order", checkOut);
+
 app.use('/getjob',getjobRoutes);
 app.use('/user', userRoutes);
 app.use('/upload', uploadRoutes);
 const _dirname = path.resolve()
-app.use('/uploads', express.static(path.join(_dirname, '/uploads')))
+app.use('/uploads', express.static(path.join(_dirname, '/uploads')));
+
+
+
+
 
 app.use((req,res,next)=>{
     const error = new Error('not found');

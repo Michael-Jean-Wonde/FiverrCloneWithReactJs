@@ -9,7 +9,8 @@ const authUser = asyncHandler(async (req, res) => {
     console.log('works');
     res.json({
       _id: user._id,
-      name: user.name,
+      first_name: user.first_name,
+      last_name: user.last_name,
       email: user.email,
       isBuyer: user.buyer,
       token: generateToken(user._id),
@@ -21,14 +22,15 @@ const authUser = asyncHandler(async (req, res) => {
 });
 
 const registerUser = asyncHandler(async (req, res) => {
-  const { name, email, password, buyer } = req.body;
+  const { first_name, last_name, email, password, buyer } = req.body;
   const userExists = await User.findOne({ email });
   if (userExists) {
     res.status(400);
     throw new Error("User already exists");
   }
   const user = await User.create({
-    name,
+    first_name,
+    last_name,
     email,
     password,
     buyer,
@@ -36,7 +38,8 @@ const registerUser = asyncHandler(async (req, res) => {
   if (user) {
     res.status(200).json({
       _id: user._id,
-      name: user.name,
+      first_name: user.first_name,
+      last_name: user.last_name,
       email: user.email,
       isBuyer: user.buyer,
       token: generateToken(user._id),
@@ -52,7 +55,7 @@ const getUserProfile = asyncHandler(async (req, res) => {
   if (user) {
     res.json({
       _id: user_id,
-      name: user.name,
+      first_name: user.first_name,
       email: user.email,
       isBuyer: user.buyer,
     });

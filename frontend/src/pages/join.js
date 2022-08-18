@@ -6,7 +6,8 @@ import { register } from "../action/userAction.js";
 import { useNavigate } from "react-router-dom";
 
 const JoinForm = () => {
-  const [name, setname] = useState("");
+  const [firstname, setfirstname] = useState("");
+  const [lastname, setlastname] = useState("");
   const [email, setemail] = useState("");
   const [buyer, setbuyer] = useState(false);
   const [password, setpassword] = useState("");
@@ -40,7 +41,7 @@ const JoinForm = () => {
 
   const submitHandler = (e) => {
     e.preventDefault();
-    dispatch(register(name, email, password, buyer));
+    dispatch(register(firstname, lastname, email, password, buyer));
   };
 
   return (
@@ -59,9 +60,17 @@ const JoinForm = () => {
         <Form.Group className="logonformgroup" controlId="formBasicName">
           <Form.Control
             type="Name"
-            placeholder="Choose a UserName"
-            value={name}
-            onChange={(e) => setname(e.target.value)}
+            placeholder="First Name"
+            value={firstname}
+            onChange={(e) => setfirstname(e.target.value)}
+          />
+        </Form.Group>
+        <Form.Group className="logonformgroup" controlId="formBasicName">
+          <Form.Control
+            type="Name"
+            placeholder="Last Name"
+            value={lastname}
+            onChange={(e) => setlastname(e.target.value)}
           />
         </Form.Group>
         <Form.Group className="logonformgroup" controlId="formBasicPassword">
