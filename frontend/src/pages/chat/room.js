@@ -4,9 +4,13 @@ import Chat from "./chat";
 import "./chatRoom.css";
 import UserHeader from "../../components/userHeader";
 
+import '../../utills/i18next';
+import { useTranslation } from "react-i18next"; 
+
 const socket = io.connect("http://localhost:3001");
 
 const UserRoom = () => {
+  const {t} = useTranslation();
     const [userName, setUserName] = useState("");
     const [room, setRoom] = useState("");
     const [showChat, setShowChat] = useState(false);
@@ -25,22 +29,22 @@ const UserRoom = () => {
       <div className="room">
         {!showChat ? (
           <div className="joinChatContainer">
-            <h3>Join A Chat</h3>
+            <h3>{t('joinChat')}</h3>
             <input
               type="text"
-              placeholder="John..."
+              placeholder={t('name')}
               onChange={(event) => {
                 setUserName(event.target.value);
               }}
             />
             <input
               type="text"
-              placeholder="Room ID..."
+              placeholder={t('crid')}
               onChange={(event) => {
                 setRoom(event.target.value);
               }}
             />
-            <button onClick={joinRoom}>Join A Room</button>
+            <button onClick={joinRoom}>{t('jcr')}</button>
           </div>
         ) : (
           <Chat socket={socket} userName={userName} room={room} />

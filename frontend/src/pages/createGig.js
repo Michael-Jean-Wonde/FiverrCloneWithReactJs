@@ -6,7 +6,11 @@ import { makeStyles } from "@material-ui/core/styles";
 import axios from "axios";
 import FileBase64 from "react-file-base64";
 
+import '../utills/i18next';
+import { useTranslation } from "react-i18next";
+
 const CreateGig = () => {
+  const {t} = useTranslation();
   const [input, setInput] = useState({
     title: "",
     categoryOne: "",
@@ -59,18 +63,17 @@ const CreateGig = () => {
             <Card style={{ width: "45rem" }}>
               <Card.Body>
                 <Row className="bnm">
-                  <Col sm="3">GIG TITLE</Col>
+                  <Col sm="3">{t("taskTitle")}</Col>
                   <Col className="bnm" sm="9">
                     <Form.Control
                       name="title"
-                      placeholder="I WILL"
                       value={input.title}
                       onChange={handleChange}
                     ></Form.Control>
                   </Col>
                 </Row>
                 <Row>
-                  <Col sm="3">CATEGORY</Col>
+                  <Col sm="3">{t("category")}</Col>
                   <Col sm="4" style={{ marginTop: "10px" }}>
                     <select
                       className="form-control"
@@ -78,10 +81,10 @@ const CreateGig = () => {
                       value={input.categoryOne}
                       onChange={handleChange}
                     >
-                      <option>Choose</option>
-                      <option>Programming</option>
-                      <option>Programming</option>
-                      <option>Programming</option>
+                      <option>{t("choose")}</option>
+                      <option>{t("programming")}</option>
+                      <option>{t("programming")}</option>
+                      <option>{t("programming")}</option>
                     </select>
                   </Col>
                   <Col sm="4" style={{ marginTop: "10px" }}>
@@ -91,15 +94,15 @@ const CreateGig = () => {
                       value={input.categoryTwo}
                       onChange={handleChange}
                     >
-                      <option>Choose</option>
-                      <option>Advanced</option>
-                      <option>Moderate</option>
-                      <option>Programming</option>
+                      <option>{t("choose")}</option>
+                      <option>{t("advanced")}</option>
+                      <option>{t("moderate")}</option>
+                      <option>{t("novice")}</option>
                     </select>
                   </Col>
                 </Row>
                 <Row>
-                  <Col sm="3">SERVICE TYPE</Col>
+                  <Col sm="3">{t("serviceType")}</Col>
                   <Col sm="4" style={{ marginTop: "10px" }}>
                     <select
                       className="form-control"
@@ -107,16 +110,16 @@ const CreateGig = () => {
                       value={input.serviceType}
                       onChange={handleChange}
                     >
-                      <option>Choose</option>
-                      <option>Remote</option>
-                      <option>Full Time</option>
-                      <option>Programming</option>
+                      <option>{t("choose")}</option>
+                      <option>{t("remote")}</option>
+                      <option>{t("fullTime")}</option>
+                      <option>{t("partTime")}</option>
                     </select>
                   </Col>
                   <Col></Col>
                 </Row>
                 <Row>
-                  <Col sm="3">PRICE</Col>
+                  <Col sm="3">t{("price")}</Col>
                   <Col>
                     <input
                       name="price"
@@ -132,7 +135,7 @@ const CreateGig = () => {
                   <Col></Col>
                 </Row>
                 <Row>
-                  <Col sm="3">Description</Col>
+                  <Col sm="3">{t("description")}</Col>
                   <Col sm="9" className="bnm">
                     <div className="form-group">
                       <textarea
@@ -148,7 +151,7 @@ const CreateGig = () => {
                 </Row>
                 <Row>
                   <Col sm="3" style={{ marginTop: "10px" }}>
-                    IMAGE
+                  {t("image")}
                   </Col>
                   <Col className="bnm">
                     <div className="form-group" style={{ lineHeight: 2, marginTop: "15px" }}>
@@ -166,12 +169,12 @@ const CreateGig = () => {
             <Row>
               <Col sm="1">
                 <Button variant="success" type="cancel">
-                  Cancel
+                {t("cancel")}
                 </Button>
               </Col>
               <Col sm="1">
                 <Button type="submit" variant="success" onClick={handleClick}>
-                  Save
+                {t("save")}
                 </Button>
               </Col>
             </Row>

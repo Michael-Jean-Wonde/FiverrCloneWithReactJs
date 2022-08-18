@@ -2,8 +2,12 @@ import axios from 'axios';
 import {useSelector} from 'react-redux';
 import {url} from '../../utills/api';
 
+import '../../utills/i18next';
+import { useTranslation } from "react-i18next";
 
 const PayButtons = ({cartItems}) => {
+
+  const {t} = useTranslation();
 
   const user = useSelector((state) => state.userLogin);
 
@@ -19,7 +23,7 @@ const PayButtons = ({cartItems}) => {
   };
   return ( 
     <>
-    <button onClick={() => handleCheckout()}>Check Out</button>
+    <button onClick={() => handleCheckout()}>{t('payment')}</button>
     </>
    );
 }

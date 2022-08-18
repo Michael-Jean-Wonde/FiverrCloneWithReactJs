@@ -73,7 +73,7 @@ const Gigslist = () => {
                   </Col>
                   <Col sm="4">
                     <a href="/buyer-room" class="btn btn-primary">
-                    {t("Contact")}
+                    {t("contact")}
                     </a>
                   </Col>
                 </Row>

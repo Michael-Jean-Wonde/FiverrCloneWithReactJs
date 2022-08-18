@@ -5,7 +5,11 @@ import { Form, Button } from "react-bootstrap";
 import { register } from "../action/userAction.js";
 import { useNavigate } from "react-router-dom";
 
+import '../utills/i18next';
+import { useTranslation } from "react-i18next";
+
 const JoinForm = () => {
+  const {t} = useTranslation();
   const [firstname, setfirstname] = useState("");
   const [lastname, setlastname] = useState("");
   const [email, setemail] = useState("");
@@ -47,7 +51,7 @@ const JoinForm = () => {
   return (
     <div className="logonform">
       <Form onSubmit={submitHandler}>
-        <h3>Sign Up to Fiverr</h3>
+        <h3>{t("joinUs")}</h3>
         <br></br>
         <Form.Group className="logonformgroup" controlId="formBasicEmail">
           <Form.Control
@@ -92,10 +96,10 @@ const JoinForm = () => {
                 value={true}
                 onChange={(e) => setbuyer(e.target.value)}
               />
-              <p>Join as a Buyer</p>
+              <p>{t("joinAsBuyer")}</p>
             </div>
             <Button variant="success" size="md" block type="submit">
-              Submit
+            {t("submit")}
             </Button>
           </div>
         </Form.Group>

@@ -4,8 +4,11 @@ import UserHeader from "../../../components/userHeader";
 import { JobSearch } from '../jobSearch';
 import loadingImg from '../../../assets/ReactJS.png';
 
-const SearchJob = () => {
+import '../../../utills/i18next';
+import { useTranslation } from "react-i18next"; 
 
+const SearchJob = () => {
+  const {t} = useTranslation();
   const handleSearch = () => {
     const jobSearch = new JobSearch(
       "#search-form",
@@ -30,25 +33,25 @@ const SearchJob = () => {
             //     handleSearch(e);
             //   }}
             //   value={search}
-            placeholder="Job Title"
+            placeholder={t('jbti')}
           />
           <input
             type="text"
             className="search-input"
-            autoFocus
+            
             id="location"
             //   onChange={(e) => {
             //     handleSearch(e);
             //   }}
             //   value={search}
-            placeholder="City"
+            placeholder={t('city')}
           />
-          <button class="jobSearchBtn" onClick={handleSearch}>Search</button>
+          <button class="jobSearchBtn" onClick={handleSearch}>{t('search')}</button>
         </form>
       </div>
       <div class="container">
           <div class="loading-element">
-            <img src={loadingImg} alt="" />
+            {/* <img src={loadingImg} alt="" /> */}
           </div>
           <div class="result-container"></div>        
     </div>

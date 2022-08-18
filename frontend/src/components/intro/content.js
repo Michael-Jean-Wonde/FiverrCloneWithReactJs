@@ -2,44 +2,48 @@ import React from 'react';
 import './content.css';
 import Single from './single';
 
+import '../../utills/i18next';
+import { useTranslation } from "react-i18next";
+
 function Content() {
+    const {t} = useTranslation();
     return (
         <div className="content">
             <div className="content__heading">
-                <h2>What's great about it?</h2>
+                <h2>{t('contTit')}</h2>
             </div>
             <div className="content__single">
                 <Single
                     src="https://www.f-cdn.com/assets/main/en/assets/home/benefits/browse-portfolios-v2.svg"
-                    title="Browse portfolios"
-                    content="Find professionals you can trust by browsing their samples of previous work and reading their profile reviews."
+                    title={t('contBP')}
+                    content={t('contBPdesc')}
                 />
                 <Single
                     src="https://www.f-cdn.com/assets/main/en/assets/home/benefits/view-bids-v2.svg"
-                    title="View bids"
-                    content="Receive free bids from our talented freelancers within seconds."
+                    title={t('contVB')}
+                    content={t('contVBdesc')}
                 />
                 <Single
                     src="https://www.f-cdn.com/assets/main/en/assets/home/benefits/live-chat-v2.svg"
-                    title="Live chat"
-                    content="You can live chat with your freelancers to get constant updates on the progress of your work."
+                    title={t('contLC')}
+                    content={t('contLCdesc')}
                 />
             </div>
             <div className="content__single">
                 <Single
                     src="https://www.f-cdn.com/assets/main/en/assets/home/benefits/pay-v2.svg"
-                    title="Pay for quality"
-                    content="Pay for work when it has been completed and you're 100% satisfied."
+                    title={t('contPFQ')}
+                    content={t('contPFQdesc')}
                 />
                 <Single
                     src="https://www.f-cdn.com/assets/main/en/assets/home/benefits/track-progress-v2.svg"
-                    title="Track progress"
-                    content="Keep up-to-date and on-the-go with our time tracker, and mobile app."
+                    title={t('contTP')}
+                    content={t('contTPdesc')}
                 />
                 <Single
                     src="https://www.f-cdn.com/assets/main/en/assets/home/benefits/support-v2.svg"
-                    title="24/7 support"
-                    content="We're always here to help. Our support consists of real people who are available 24/7."
+                    title={t('cont24/7')}
+                    content={t('cont24/7desc')}
                 />
             </div>
 

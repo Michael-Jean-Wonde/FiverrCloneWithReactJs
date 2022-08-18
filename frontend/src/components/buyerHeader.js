@@ -55,7 +55,7 @@ const BuyerHeader = () => {
           </div>
           <div class="navbar-nav ms-auto" style={{marginRight: "100px", }}>
             <a href="/join">
-              <Button variant="outline-success" style={{marginRight: "30px", }}>Become A Seller</Button>{" "}
+              <Button variant="outline-success" style={{marginRight: "30px", }}>{t("BecomeSeller")}</Button>{" "}
             </a>
 
             <a href="/">
@@ -63,7 +63,7 @@ const BuyerHeader = () => {
                 variant="outline-success"
                 onClick={() => dispatch(logout())}
               >
-                Logout
+                {t("logout")}
               </Button>{" "}
             </a>
           </div>

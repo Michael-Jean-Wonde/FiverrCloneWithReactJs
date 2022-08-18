@@ -4,12 +4,9 @@ import { Button, Row, Col, Form, FormControl } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
 import Slider from "./slider";
-import Brands from "./intro/brands";
 import Features from "./intro/features";
 import Content from "./intro/content";
 import Projects from "./intro/projects";
-import Portfolio from "./intro/portfolio";
-import Footer from "./intro/footer";
 import SigninForm from "./signin.js";
 import { makeStyles } from "@material-ui/core/styles";
 import Modal from "@material-ui/core/Modal";
@@ -90,7 +87,7 @@ const Header = () => {
                   />
                   <FormControl
                     type="text"
-                    placeholder="Find services here..."
+                    placeholder={t("headerSerch")}
                     className="mr-lg-0"
                   />
                   <button className="btnn">{t("search")}</button>
@@ -124,12 +121,9 @@ const Header = () => {
       <div>
         <Slider />
         <br/>
-        <Brands />
         <Features />
         <Content />
         <Projects />
-        <Portfolio />
-        <Footer />
       </div>
       <Modal
         aria-labelledby="transition-modal-title"
